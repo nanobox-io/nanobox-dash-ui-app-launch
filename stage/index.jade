@@ -9,18 +9,25 @@ html(lang="en")
     // endbuild
     
     // build:css style.css
+    link(href="css/app-launch-svg.css", rel="stylesheet")
     link(href="css/main.css", rel="stylesheet")
     // endbuild
 
   body
-    p The jade file `stage/index.jade` serves as a staging area for your library.
-
+    .steps-wrapper
     // build:remove 
     script(src="bower-libs/jquery/dist/jquery.js")
     script(src="bower-libs/jade/runtime.js")
+    script(src="bower-libs/sequin/rel/app.js")
+    script(src="bower-libs/shadow-icons/rel/app.js")
+    script(src="https://use.typekit.net/cqd5kth.js")
     // endbuild
 
+    script(type="text/javascript") try{Typekit.load({ async: true });}catch(e){}
+
+
     // build:js app.js
+    script(src="js/app-launch-svg.js")
     script(src="js/main.js")
     // endbuild
     

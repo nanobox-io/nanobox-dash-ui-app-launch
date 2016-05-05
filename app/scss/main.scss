@@ -1,1 +1,9 @@
-@import 'vars-and-utils';
+@import '../../libs/core-styles/core';
+.app-launch{
+  @import 'step-manager';
+  .launch-step{
+    @import 'name-app';
+    @import 'choose-provider';
+    @import 'summary';
+  }
+}

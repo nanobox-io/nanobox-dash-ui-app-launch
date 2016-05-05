@@ -1,11 +1,9 @@
-example = require 'jade/example'
+StepManager = require 'step-manager'
 
 class AppLaunch
 
   constructor: ($el) ->
-    data  = { message: 'Live long and prosper.', source:'(See app/coffee/main.coffee)' }
-    $node = $ example( data )
-    $el.append $node
+    @stepManager = new StepManager $el
 
 window.nanobox ||= {}
 nanobox.AppLaunch = AppLaunch

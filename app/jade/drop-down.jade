@@ -1,0 +1,8 @@
+.drop-down
+  .checkmark
+    img.shadow-icon(data-src="dropdown-check")
+  each option in options
+    if option.isLabel
+      .label=option.name
+    else
+      .option(data-id="#{option.id}")= option.name

@@ -1,9 +1,8 @@
+$blue : #0072C3;
+$stage-width : 960px;
+
 @import '../../libs/core-styles/core';
+@import 'drop-down';
 .app-launch{
   @import 'step-manager';
-  .launch-step{
-    @import 'name-app';
-    @import 'choose-provider';
-    @import 'summary';
-  }
 }

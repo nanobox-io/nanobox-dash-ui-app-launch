@@ -1,7 +1,28 @@
-.step-manager   {
-  .step-key     { display: flex; align-items: center; 
-    .step-count { }
-    .step-title { text-transform: uppercase; }
+.step-manager      {
+  .step-key        { display: flex; align-items: center; border-bottom: solid 1px #BFBFBF; padding:8px 0;
+    .step-count    { color: $blue; font-style: italic;  }
+    .step-title    { margin-left: 15px; text-transform: uppercase; font-weight: $bold; font-size: 14px; color: #3F5F6B;}
+    .ui-btn        { cursor: pointer;  font-style:italic; color:#A4A4A4; display:flex; align-items: center;
+      .txt         { margin-left:8px; }
+      &.cancel     { display:flex; }
+      &.back       { margin-left: auto; margin-right:40px; }
+    }
+  }
 
+  .step-wrapper    { position: relative;
+    $easing : cubic-bezier(0.840, 0.005, 0.000, 1.000);
+
+    .steps         { position: absolute; display: flex; @include transition(all, 350ms, $easing);
+      .launch-step { width: $stage-width; flex-shrink: 0; opacity:0; @include transition(opacity, 450ms, $easing);
+        @import 'name-app';
+        @import 'choose-provider';
+        @import 'summary';
+        &.active   { opacity:1; }
+      }
+    }
+  }
+
+  .arrow-btn       { position:relative; display: flex; cursor: pointer;
+    &:after        { content: "Next"; color: white; font-style:italic; position: absolute; left:45%; transform: translate(-50%, 0); top:10px; }
   }
 }

@@ -1,3 +1,6 @@
-module.exports = class Summary
+Step    = require 'steps/step'
 
-  constructor: ($el) ->
+module.exports = class Summary extends Step
+
+  constructor: ($el, @nextStepCb) ->
+    super

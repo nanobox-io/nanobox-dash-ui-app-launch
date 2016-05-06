@@ -1,5 +1,34 @@
-module.exports = class ChooseProvider
+chooseProvider = require 'jade/choose-provider'
+DropDown       = require 'drop-down'
+Step           = require 'steps/step'
 
-  constructor: ($el) ->
+module.exports = class ChooseProvider extends Step
 
-  
+  constructor: ($el, @nextStepCb, @providers) ->
+    @$node = $ chooseProvider( {providers:@providers} )
+    $el.append @$node
+    castShadows @$node
+
+    $(".arrow-btn", @$node).on "click", ()=> @nextStepCb()
+
+    ar = []
+    for provider in @providers
+      ar.push {name:provider.name, id: provider.name}
+
+    dropDown = new DropDown $("#provider", @$node), ar, @onProviderChange
+    @onProviderChange ar[0].id
+    super()
+
+  onProviderChange : (id) =>
+    for provider in @providers
+      if provider.name == id
+        @regionDropDown?.destroy()
+        @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
+
+  getTitle : () -> "Choose a Provider and Region"
+
+  onRegionChange : () ->
+    # @region?.remove()
+    # @region = new DropDown $("#region", $node), ar, @onProviderChange
+
+  getProviderAndRegion : () ->

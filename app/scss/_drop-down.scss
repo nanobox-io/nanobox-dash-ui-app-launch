@@ -1,0 +1,23 @@
+.drop-down         {
+
+}
+
+.drop-down-trigger { position:relative; display: flex; margin-bottom:-10px; color: $blue; font-style: italic; border-bottom: 4px solid $blue; padding-bottom: 3px; cursor: pointer;
+  &:after          { margin-top: 7px; display: block; content:""; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 7px solid $blue; margin-left: 20px; transform: scaleX(0.8); }
+}
+
+.drop-down         { user-select: none; background:white; position: absolute; left: 20px; @include drop-shadow(0, 1px, 6px, #AAA);
+  .checkmark       { display:none; }
+  .label, .option  { border-bottom: solid #F1EFEF 1px; padding: 4px 16px 4px 22px; display: relative;
+    .checkmark     { display:block; position:absolute; left:6px; top:3px;  }
+  }
+  .label           { color:#B5BFC7; font-size:12px; padding-left:14px;  }
+  .option          { position:relative; color: $blue; font-weight:$medium; font-size: 16px; font-style: italic; cursor:pointer;
+    &.focus        { background: $blue; color: white;
+      .checkmark   {
+        svg *      { fill:white; }
+      }
+    }
+    &.clicked      { background: #53F0FF;  }
+  }
+}

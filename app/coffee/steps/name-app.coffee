@@ -1,9 +1,15 @@
 nameApp = require 'jade/name-app'
+Step    = require 'steps/step'
 
-module.exports = class NameApp
+module.exports = class NameApp extends Step
 
-  constructor: ($el) ->
-    $node = $ nameApp( {} )
-    $el.append $node
+  constructor: ($el, @nextStepCb) ->
+    @$node = $ nameApp( {} )
+    $el.append @$node
+    castShadows @$node
 
-    console.log 'namer'
+    $(".arrow-btn", @$node).on "click", ()=> @nextStepCb()
+
+    super()
+
+  getTitle : () -> "Name your app"

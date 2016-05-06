@@ -5,16 +5,61 @@ stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: ($el) ->
-    $node = $ stepManager( {} )
-    $el.append $node
+  constructor: ($el, providers) ->
+    @$node = $ stepManager( {} )
+    $el.append @$node
 
-    $holder = $ '.steps', $node
-    castShadows $node
+    $(".ui-btn.back", @$node).on 'click', ()=> @previousStep()
 
-    nameApp        = new NameApp $holder
-    chooseProvider = new ChooseProvider $holder
-    summary        = new Summary $holder
+    @$wrapper     = $ '.step-wrapper', @$node
+    @$steps       = $ ".steps", @$node
+    @$currentStep = $ "#current-step", @$node
+    @$stepTitle   = $ ".step-title", @$node
 
-    ar = [nameApp, chooseProvider, summary]
-    @sequence = new Sequin( ar )
+    $holder = $ '.steps', @$node
+    castShadows @$node
+
+    nameApp        = new NameApp $holder, @nextStep
+    chooseProvider = new ChooseProvider $holder, @nextStep, providers
+    # summary        = new Summary $holder, @nextStep
+    @$allSteps    = $ ".launch-step", @$node
+
+
+    ar = [nameApp, chooseProvider] #, summary]
+    @steps = new Sequin( ar )
+
+    @slideToCurrentStep()
+
+  slideToCurrentStep : ()->
+    @steps.currentItem().activate()
+    @$currentStep.text @steps.currentItemIndex+1
+    # @$stepTitle.text @steps.currentItem().getTitle()
+
+    @$allSteps.removeClass 'active'
+    @steps.currentItem().$node.addClass 'active'
+    left = - @steps.currentItem().$node.position().left
+
+    me = @
+    setTimeout ()->
+      me.$steps.css left: left
+    , 100
+
+    # If it's the last item, change the next button to submit
+    # @$node.removeClass 'submit'
+    # @$node.removeClass 'first'
+
+    # if @steps.isAtLastItem()
+    #   @$node.addClass 'submit'
+    # else if @steps.currentItemIndex == 0
+    #   @$node.addClass 'first'
+
+  nextStep : () =>
+    if @steps.isAtLastItem()
+      @submit()
+    else
+      @steps.next()
+      @slideToCurrentStep()
+
+  previousStep : () =>
+    @steps.prev()
+    @slideToCurrentStep()

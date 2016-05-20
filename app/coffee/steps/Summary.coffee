@@ -1,6 +1,12 @@
 Step    = require 'steps/step'
+summary = require 'jade/summary'
 
 module.exports = class Summary extends Step
 
   constructor: ($el, @nextStepCb) ->
-    super
+    @$node = $ summary( {} )
+    $el.append @$node
+
+    super()
+
+  getTitle : () -> "Review and Submit"

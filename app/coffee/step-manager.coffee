@@ -21,11 +21,11 @@ module.exports = class StepManager
 
     nameApp        = new NameApp $holder, @nextStep
     chooseProvider = new ChooseProvider $holder, @nextStep, providers
-    # summary        = new Summary $holder, @nextStep
+    summary        = new Summary $holder, @nextStep
     @$allSteps    = $ ".launch-step", @$node
 
 
-    ar = [nameApp, chooseProvider] #, summary]
+    ar = [nameApp, chooseProvider, summary]
     @steps = new Sequin( ar )
 
     @slideToCurrentStep()
@@ -33,7 +33,7 @@ module.exports = class StepManager
   slideToCurrentStep : ()->
     @steps.currentItem().activate()
     @$currentStep.text @steps.currentItemIndex+1
-    # @$stepTitle.text @steps.currentItem().getTitle()
+    @$stepTitle.text @steps.currentItem().getTitle()
 
     @$allSteps.removeClass 'active'
     @steps.currentItem().$node.addClass 'active'
@@ -45,13 +45,13 @@ module.exports = class StepManager
     , 100
 
     # If it's the last item, change the next button to submit
-    # @$node.removeClass 'submit'
-    # @$node.removeClass 'first'
+    @$node.removeClass 'submit'
+    @$node.removeClass 'first'
 
-    # if @steps.isAtLastItem()
-    #   @$node.addClass 'submit'
-    # else if @steps.currentItemIndex == 0
-    #   @$node.addClass 'first'
+    if @steps.isAtLastItem()
+      @$node.addClass 'submit'
+    else if @steps.currentItemIndex == 0
+      @$node.addClass 'first'
 
   nextStep : () =>
     if @steps.isAtLastItem()

@@ -24,6 +24,11 @@ module.exports = class ChooseProvider extends Step
       if provider.name == id
         @regionDropDown?.destroy()
         @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
+        $iconHolder = $(".provider-icon", @$node)
+        $iconHolder.empty()
+        $iconHolder.append $("<img data-src='create-#{provider.icon}' class='shadow-icon' />")
+        castShadows $iconHolder
+
 
   getTitle : () -> "Choose a Provider and Region"
 

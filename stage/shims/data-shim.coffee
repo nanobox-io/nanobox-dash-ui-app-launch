@@ -5,6 +5,7 @@ module.exports = class DataShim
 
   getProviders : () -> [
     {
+      id: 'do'
       name : "Digital Ocean"
       icon: "digital-ocean"
       regions  : [
@@ -21,8 +22,9 @@ module.exports = class DataShim
       ]
     },
     {
+      id: 'aws'
       name : "AWS (Amazon Web Services)"
-      icon: "aws-ocean"
+      icon: "aws"
       regions  : [
         {name:"US East", isLabel:true}
         {name:"N. Virginia", id:"us-east-1"}
@@ -45,6 +47,7 @@ module.exports = class DataShim
       ]
     },
     {
+      id: 'gc'
       name : "Google Compute Engine"
       icon: "google-compute"
       regions : [

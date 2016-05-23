@@ -1,11 +1,10 @@
 {
   "name": "app-launch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "jquery": "*",
     "velocity": "~1.1.0",
     "shadow-icons": "tolmark12/shadow-icons-js",
-    "sequence": "sequin#^0.0.2",
     "sequin": "^0.0.3"
   },
   "ignore": [

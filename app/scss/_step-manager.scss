@@ -21,8 +21,9 @@
       }
     }
   }
+}
 
-  .arrow-btn       { position:relative; display: flex; cursor: pointer;
-    &:after        { content: "Next"; color: white; font-style:italic; position: absolute; left:45%; transform: translate(-50%, 0); top:10px; }
-  }
+&.first            {
+  .ui-btn.cancel   { margin-left:auto; }
+  .ui-btn.back     { display: none !important; }
 }

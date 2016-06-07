@@ -13,15 +13,15 @@ module.exports = class ChooseProvider extends Step
 
     ar = []
     for provider in @providers
-      ar.push {name:provider.name, id: provider.name}
+      ar.push {name:provider.name, id: provider.id}
 
-    dropDown = new DropDown $("#provider", @$node), ar, @onProviderChange
+    @provider = new DropDown $("#provider", @$node), ar, @onProviderChange
     @onProviderChange ar[0].id
     super()
 
   onProviderChange : (id) =>
     for provider in @providers
-      if provider.name == id
+      if provider.id == id
         @regionDropDown?.destroy()
         @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
         $iconHolder = $(".provider-icon", @$node)
@@ -36,4 +36,5 @@ module.exports = class ChooseProvider extends Step
     # @region?.remove()
     # @region = new DropDown $("#region", $node), ar, @onProviderChange
 
-  getProviderAndRegion : () ->
+  getProviderAndRegion : () =>
+    {provider: @provider.val(), region:@regionDropDown.val()}

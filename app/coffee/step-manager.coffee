@@ -5,7 +5,7 @@ stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: ($el, providers) ->
+  constructor: ($el, providers, submitCb) ->
     @$node = $ stepManager( {} )
     $el.append @$node
 
@@ -21,7 +21,7 @@ module.exports = class StepManager
 
     nameApp        = new NameApp $holder, @nextStep
     chooseProvider = new ChooseProvider $holder, @nextStep, providers
-    summary        = new Summary $holder, @nextStep
+    summary        = new Summary $holder, chooseProvider.getProviderAndRegion, submitCb
     @$allSteps    = $ ".launch-step", @$node
 
 

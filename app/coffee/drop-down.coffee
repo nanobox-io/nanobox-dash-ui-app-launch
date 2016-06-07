@@ -4,7 +4,8 @@ module.exports = class DropDown
 
   constructor: (@$el, @options, @onChangeCb) ->
     @$el.addClass 'drop-down-trigger'
-    @$el.text @getSelectedOptionName( @options )
+    [@activeOptionId, name] = @getSelectedOptionName( @options )
+    @$el.text name
     @$el.on "mousedown", (e)=>
       # If there is a dropdown active on the page, deactivate
       DropDown.activeDropDown?.hideOptions()
@@ -95,6 +96,11 @@ module.exports = class DropDown
     @$el.empty()
     $(".option", @$el).off()
 
+  val : () ->
+    console.log @
+    @activeOptionId
+
+
   # ------------------------------------ Helpers
 
   getSelectedOptionName : (options) ->
@@ -106,6 +112,6 @@ module.exports = class DropDown
 
       if option.selected
         @activeOptionId = option.id
-        return option.name
+        return [option.id, option.name]
     #  We didnt find any options that were selected, so return the first option in the list
-    return defaultOption.name
+    return [defaultOption.id, defaultOption.name]

@@ -2,8 +2,8 @@ StepManager = require 'step-manager'
 
 class AppLaunch
 
-  constructor: ($el, providers) ->
-    @stepManager = new StepManager $el, providers
+  constructor: ($el, config) ->
+    @stepManager = new StepManager $el, config.providers, config.appLaunchCb
 
 window.nanobox ||= {}
 nanobox.AppLaunch = AppLaunch

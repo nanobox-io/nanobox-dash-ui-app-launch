@@ -3,11 +3,11 @@ summary = require 'jade/summary'
 
 module.exports = class Summary extends Step
 
-  constructor: ($el, getProviderAndRegion, submitCb) ->
+  constructor: ($el, submitCb) ->
     @$node = $ summary( {} )
     $el.append @$node
     castShadows @$node
-    $("#submit", @$node).on 'click', ()-> submitCb( getProviderAndRegion() )
+    $("#submit", @$node).on 'click', ()-> submitCb()
     super()
 
   getTitle : () -> "Review and Submit"

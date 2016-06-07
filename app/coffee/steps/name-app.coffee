@@ -12,4 +12,6 @@ module.exports = class NameApp extends Step
 
     super()
 
+  getAppName : ()-> $('input', @$node).val()
+
   getTitle : () -> "Name your app"

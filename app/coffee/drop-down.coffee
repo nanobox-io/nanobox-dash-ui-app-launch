@@ -96,9 +96,7 @@ module.exports = class DropDown
     @$el.empty()
     $(".option", @$el).off()
 
-  val : () ->
-    console.log @
-    @activeOptionId
+  val : () -> @activeOptionId
 
 
   # ------------------------------------ Helpers

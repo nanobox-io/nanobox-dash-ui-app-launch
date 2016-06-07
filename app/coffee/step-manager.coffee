@@ -5,7 +5,7 @@ stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: ($el, providers, submitCb) ->
+  constructor: ($el, providers, @submitCb) ->
     @$node = $ stepManager( {} )
     $el.append @$node
 
@@ -19,13 +19,12 @@ module.exports = class StepManager
     $holder = $ '.steps', @$node
     castShadows @$node
 
-    nameApp        = new NameApp $holder, @nextStep
-    chooseProvider = new ChooseProvider $holder, @nextStep, providers
-    summary        = new Summary $holder, chooseProvider.getProviderAndRegion, submitCb
+    @nameApp        = new NameApp $holder, @nextStep
+    @chooseProvider = new ChooseProvider $holder, @nextStep, providers
+    @summary        = new Summary $holder, @submitData
     @$allSteps    = $ ".launch-step", @$node
 
-
-    ar = [nameApp, chooseProvider, summary]
+    ar = [@nameApp, @chooseProvider, @summary]
     @steps = new Sequin( ar )
 
     @slideToCurrentStep()
@@ -63,3 +62,8 @@ module.exports = class StepManager
   previousStep : () =>
     @steps.prev()
     @slideToCurrentStep()
+
+  submitData : () =>
+    data      = @chooseProvider.getProviderAndRegion()
+    data.name = @nameApp.getAppName()
+    @submitCb data

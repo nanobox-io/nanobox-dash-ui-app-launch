@@ -6,6 +6,7 @@ dataShim = new DataShim()
 onLaunchApp = (data) ->
   console.log "Launching a new app with these specs:"
   console.log data
+  # example output :  {provider: 'aws', region:'us_east'}
 
 config =
   providers    : dataShim.getProviders()

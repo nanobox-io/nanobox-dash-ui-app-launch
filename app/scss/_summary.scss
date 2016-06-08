@@ -21,7 +21,9 @@
       &:before               { content:"$"}
       &:after                { content:"/mo"; font-size:14px;}
     }
-    .arrow-btn               { margin-top:85px; margin-left:50px;}
+    .arrow-btn               { margin-top:85px; margin-left:50px;
+      &:after                { content:"Submit"}
+    }
   }
 
   // What's about to happen section

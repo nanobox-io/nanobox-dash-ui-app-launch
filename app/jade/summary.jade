@@ -1,4 +1,38 @@
 .launch-step.summary 
-  .placeholder Design for Summary Coming..
-  .arrow-btn#submit
-    img.shadow-icon(data-src="next-arrow-btn")
+  .info
+    .info-box.provider
+      .title
+        .icon-wrapper
+          img.shadow-icon(data-src="create-digital-ocean" scalable="true")
+        .txt Digital Ocean
+      .blurb 
+        .txt Digital Ocean Droplet - Amsterdam West
+        #server-specs-toggle
+          .txt Show Server Specs
+          img.shadow-icon(data-src="triangle-to-line")
+      .cost 5
+        
+    .info-box.nanobox
+      .title
+        .icon-wrapper
+          img.shadow-icon(data-src="mini-nano-stack" scalable="true")
+        .txt Nanobox
+      .blurb Using nanobox is completely free for hobby projects and small sites. If you need to scale up, switch to a production plan at any time.
+      .cost 0
+        
+    .arrow-btn#submit
+      img.shadow-icon(data-src="next-arrow-btn")
+  
+  .whats-next.cloaked
+    .down-arrow
+      img.shadow-icon(data-src="whats-next")
+      .title What's about to happen?
+    .process
+      img.shadow-icon(data-src="next-process")
+      .txt#one We order a bare bones server on your Digital Ocean account.
+      .txt#two We install the nanobox app platform onto your new server
+      .txt#three You deploy your app to your server via the nanobox tool 
+      .txt#four Scale as needed for traffic and redundancy
+      .no-worries (Don't worry, we'll walk you through the process)
+      .smiler
+        img.shadow-icon(data-src="gray-smiler")

@@ -24,18 +24,21 @@ module.exports = class StepManager
     @summary        = new Summary $holder, @submitData
     @$allSteps    = $ ".launch-step", @$node
 
-    ar = [@nameApp, @chooseProvider, @summary]
+    ar = [ @nameApp, @chooseProvider, @summary ]
     @steps = new Sequin( ar )
 
     @slideToCurrentStep()
 
   slideToCurrentStep : ()->
-    @steps.currentItem().activate()
+    if @currentStep?
+      @currentStep.deactivate()
+    @currentStep = @steps.currentItem()
+    @currentStep.activate()
     @$currentStep.text @steps.currentItemIndex+1
-    @$stepTitle.text @steps.currentItem().getTitle()
+    @$stepTitle.text @currentStep.getTitle()
 
     @$allSteps.removeClass 'active'
-    @steps.currentItem().$node.addClass 'active'
+    @currentStep.$node.addClass 'active'
     left = - @steps.currentItem().$node.position().left
 
     me = @

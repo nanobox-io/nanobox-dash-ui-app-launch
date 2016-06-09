@@ -4,7 +4,7 @@ summaryMeat = require 'jade/summary-meat'
 
 module.exports = class Summary extends Step
 
-  constructor: ($el, submitCb, @getData) ->
+  constructor: ($el, @submitCb, @getData) ->
     @$node      = $ summary( {} )
     super()
     $el.append @$node
@@ -18,8 +18,8 @@ module.exports = class Summary extends Step
     @$whatsNext = $ ".whats-next", @meat
 
     castShadows @meat
-    $("#submit", @meat).on 'click', ()->
-      submitCb()
+    $("#submit", @meat).on 'click', ()=>
+      @submitCb()
 
     $("#server-specs-toggle", @meat).on 'click', ()=>
       $(".blurb", @$meat).toggleClass "expanded"

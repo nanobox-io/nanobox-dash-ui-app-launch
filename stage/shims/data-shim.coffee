@@ -7,7 +7,15 @@ module.exports = class DataShim
     {
       id: 'do'
       name : "Digital Ocean"
-      icon: "digital-ocean"
+      meta:
+        icon: "digital-ocean"
+        serverNickName: "Droplet"
+        specs: [
+          {metric:"ram", val: "512 MB"}
+          {metric:"cpu", val: "0.5 Core"}
+          {metric:"disk",val: "1 GB"}
+          {metric:"transfer", val: "2 TB"}
+        ]
       regions  : [
         {name: "New York 1", id: "nyc1"}
         {name: "New York 2", id: "nyc2"}
@@ -23,8 +31,16 @@ module.exports = class DataShim
     },
     {
       id: 'aws'
-      name : "AWS (Amazon Web Services)"
-      icon: "aws"
+      name : "AWS"
+      meta:
+        icon: "aws"
+        serverNickName: "EC2 Instance"
+        specs: [
+          {metric:"ram", val: "512 MB"}
+          {metric:"cpu", val: "0.5 Core"}
+          {metric:"disk",val: "1 GB"}
+          {metric:"transfer", val: "2 TB"}
+        ]
       regions  : [
         {name:"US East", isLabel:true}
         {name:"N. Virginia", id:"us-east-1"}
@@ -49,7 +65,15 @@ module.exports = class DataShim
     {
       id: 'gc'
       name : "Google Compute Engine"
-      icon: "google-compute"
+      meta:
+        icon: "google-compute"
+        serverNickName: "VM"
+        specs: [
+          {metric:"ram", val: "512 MB"}
+          {metric:"cpu", val: "0.5 Core"}
+          {metric:"disk",val: "1 GB"}
+          {metric:"transfer", val: "2 TB"}
+        ]
       regions : [
         {name:"Easter United States", isLabel:true}
         {name:"South Carolina - B", id: "us-east1-b"}

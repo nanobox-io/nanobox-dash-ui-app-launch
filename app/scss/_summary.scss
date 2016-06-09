@@ -1,46 +1,64 @@
-&.summary                    {
+&.summary                      {
   // Main Info Section
-  .title                     { color:#3F5F6B; text-transform:uppercase; font-size:20px; font-weight: $bold; letter-spacing:0.06em; }
-  .info                      { display: flex; align-items: stretch; margin-top:50px;
-    .info-box                { display: flex; flex-direction: column; margin-right:50px; position:relative;
-      &.provider             {
-        .title .icon-wrapper { margin-top:-5px; }
+  .title                       { color:#3F5F6B; text-transform:uppercase; font-size:20px; font-weight: $bold; letter-spacing:0.06em; }
+  .info                        { display: flex; align-items: stretch; margin-top:50px;
+    .info-box                  { display: flex; flex-direction: column; margin-right:50px; position:relative;
+      &.provider               {
+        .title .icon-wrapper   { margin-top:-5px;
+          &.google-compute     { width: 33px; margin-top:-24px; }
+          &.aws                { width: 53px; margin-top:-17px; }
+        }
       }
-      &.nanobox              {
-        .title .icon-wrapper { width:19px; margin-top:-15px; }
+      &.nanobox                {
+        .title .icon-wrapper   { width:19px; margin-top:-15px; }
       }
-      .title                 { display:flex; align-items:center; margin-bottom:8px;
-        .icon-wrapper        { width:45px; height: 25px; margin-right:13px; }
+      .title                   { display:flex; align-items:center; margin-bottom:8px;
+        .icon-wrapper          { width:45px; height: 25px; margin-right:13px; }
       }
-      .blurb                 { flex-grow:1; width:332px; background: #F3F5F4; padding:15px; color:#82979F; font-size:15px; @include italic; box-sizing: border-box; line-height:1.7; padding-bottom:28px;}
-      #server-specs-toggle   { display:flex; align-items: baseline; color: #029ADB; cursor: pointer;
-        svg                  { margin-left:10px; align-self: center; }
+      .blurb                   { flex-grow:1; width:332px; background: #F3F5F4; padding:15px; color:#82979F; font-size:15px; @include italic; box-sizing: border-box; line-height:1.7; padding-bottom:28px;
+        #server-specs-toggle   { display:flex; align-items: baseline; color: #029ADB; cursor: pointer;
+          .txt:after           { content:"Show Server Specs"; width:130px; display: block; }
+          svg                  { margin-right:10px; align-self: center; }
+        }
+        .specs                 { padding: 15px 0 25px; display:none;
+          .spec                { display:flex; margin-bottom: 2px; padding-left: 10px; font-size:13px; border-bottom: solid 2px #FFF;
+            .metric            { text-transform: uppercase; }
+            .val               { margin-left: auto; }
+          }
+        }
+        &.expanded             {
+          .specs               { display: block; }
+          #server-specs-toggle {
+            .txt:after         { content:"Hide Server Specs" }
+          }
+          svg                  { transform:scaleY(-1); }
+        }
       }
     }
-    .cost                    { right:-30px; bottom:-35px; position:absolute; background:white; text-align:center; width: 70px; height:70px; border-radius:50%; font-size:20px; font-weight: bold; color:#3F5F6B; line-height: 70px;
-      &:before               { content:"$"}
-      &:after                { content:"/mo"; font-size:14px;}
+    .cost                      { right:-30px; bottom:-35px; position:absolute; background:white; text-align:center; width: 70px; height:70px; border-radius:50%; font-size:20px; font-weight: bold; color:#3F5F6B; line-height: 70px;
+      &:before                 { content:"$"}
+      &:after                  { content:"/mo"; font-size:14px;}
     }
-    .arrow-btn               { margin-top:85px; margin-left:50px;
-      &:after                { content:"Submit"}
+    .arrow-btn                 { margin-top:85px; margin-left:50px;
+      &:after                  { content:"Submit"}
     }
   }
 
   // What's about to happen section
-  .whats-next                { margin:130px auto; @include transition(opacity, 550ms);
-    &.cloaked                { opacity:0; }
-    .down-arrow              { position:relative; width:350px; margin:0 auto 50px;
-      .title                 { position:absolute; width:100%; text-align: center; top:18px; }
+  .whats-next                  { margin:130px auto; @include transition(opacity, 550ms);
+    &.cloaked                  { opacity:0; }
+    .down-arrow                { position:relative; width:350px; margin:0 auto 50px;
+      .title                   { position:absolute; width:100%; text-align: center; top:18px; }
     }
-    .process                 { margin:0 auto; width: 453px; font-size: 15px; @include italic; color:#637787; position: relative;
-      .txt                   { position:absolute; width: 175px;
-        &#one                { top:160px; left:1px; }
-        &#two                { top:200px;   left:310px; }
-        &#three              { top:430px; left:1px; }
-        &#four               { top:470px;   left:310px; }
+    .process                   { margin:0 auto; width: 453px; font-size: 15px; @include italic; color:#637787; position: relative;
+      .txt                     { position:absolute; width: 175px;
+        &#one                  { top:160px; left:1px; }
+        &#two                  { top:200px;   left:310px; }
+        &#three                { top:430px; left:1px; }
+        &#four                 { top:470px;   left:310px; }
       }
-      .no-worries            { width:100%; text-align:center; margin:90px 0 20px;}
-      .smiler                { margin:0 auto; width:37px; }
+      .no-worries              { width:100%; text-align:center; margin:90px 0 20px;}
+      .smiler                  { margin:0 auto; width:37px; }
     }
   }
 }

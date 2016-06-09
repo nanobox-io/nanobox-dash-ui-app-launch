@@ -26,7 +26,7 @@ module.exports = class ChooseProvider extends Step
         @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
         $iconHolder = $(".provider-icon", @$node)
         $iconHolder.empty()
-        $iconHolder.append $("<img data-src='create-#{provider.icon}' class='shadow-icon' />")
+        $iconHolder.append $("<img data-src='create-#{provider.meta.icon}' class='shadow-icon' />")
         castShadows $iconHolder
 
 

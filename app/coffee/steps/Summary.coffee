@@ -1,20 +1,38 @@
-Step    = require 'steps/step'
-summary = require 'jade/summary'
+Step        = require 'steps/step'
+summary     = require 'jade/summary'
+summaryMeat = require 'jade/summary-meat'
 
 module.exports = class Summary extends Step
 
-  constructor: ($el, submitCb) ->
+  constructor: ($el, submitCb, @getData) ->
     @$node      = $ summary( {} )
-    @$whatsNext = $ ".whats-next", @$node
-
-    $el.append @$node
-    castShadows @$node
-    $("#submit", @$node).on 'click', ()-> submitCb()
     super()
+    $el.append @$node
+
+  build : () ->
+    if @meat?
+      $("#submit", @meat).off
+      @$node.empty()
+
+    @meat = $ summaryMeat( @data )
+    @$whatsNext = $ ".whats-next", @meat
+
+    castShadows @meat
+    $("#submit", @meat).on 'click', ()->
+      submitCb()
+
+    $("#server-specs-toggle", @meat).on 'click', ()=>
+      $(".blurb", @$meat).toggleClass "expanded"
+
+    @$node.append @meat
 
   getTitle : () -> "Review and Submit"
 
   activate : () ->
+    @data = @getData()
+    console.log @data
+    @build()
+
     @fadeInTimout = setTimeout ()=>
       @$whatsNext.removeClass 'cloaked'
     ,

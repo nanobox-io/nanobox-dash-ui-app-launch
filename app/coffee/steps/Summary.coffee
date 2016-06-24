@@ -30,7 +30,6 @@ module.exports = class Summary extends Step
 
   activate : () ->
     @data = @getData()
-    console.log @data
     @build()
 
     @fadeInTimout = setTimeout ()=>

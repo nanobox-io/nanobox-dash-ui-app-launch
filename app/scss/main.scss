@@ -1,8 +1,14 @@
 $blue : #0072C3;
 $stage-width : 960px;
 
+<<<<<<< HEAD
 @import '../../lib/core-styles/scss/utils';
+=======
+@import '../../lib/assets/core-styles/scss/_core';
+>>>>>>> 47157ddac9af093d1e8b1f1085049299b8403c61
 @import 'drop-down';
+
+//
 .app-launch{
   @import 'step-manager';
   .arrow-btn       { position:relative; display: flex; cursor: pointer; width:95px;

@@ -15,7 +15,7 @@
       .title                   { display:flex; align-items:center; margin-bottom:8px;
         .icon-wrapper          { width:45px; height: 25px; margin-right:13px; }
       }
-      .blurb                   { flex-grow:1; width:332px; background: #F3F5F4; padding:15px; color:#82979F; font-size:15px; @include italic; box-sizing: border-box; line-height:1.7; padding-bottom:28px;
+      .blurb                   { flex-grow:1; width:332px; background: white; padding:15px; color:#82979F; font-size:15px; @include italic; box-sizing: border-box; line-height:1.7; padding-bottom:28px;
         #server-specs-toggle   { display:flex; align-items: baseline; color: #029ADB; cursor: pointer;
           .txt:after           { content:"Show Server Specs"; width:130px; display: block; }
           svg                  { margin-right:10px; align-self: center; }
@@ -35,7 +35,7 @@
         }
       }
     }
-    .cost                      { right:-30px; bottom:-35px; position:absolute; background:white; text-align:center; width: 70px; height:70px; border-radius:50%; font-size:20px; font-weight: bold; color:#3F5F6B; line-height: 70px;
+    .cost                      { right:-30px; bottom:-35px; position:absolute; background:#A7B5C4; text-align:center; width: 70px; height:70px; border-radius:50%; font-size:20px; font-weight: bold; color:white; line-height: 70px; 
       &:before                 { content:"$"}
       &:after                  { content:"/mo"; font-size:14px;}
     }

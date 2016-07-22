@@ -1,16 +1,16 @@
-&.choose-provider { margin-top:60px; 
+&.choose-provider { margin-top:60px;
   .long-strip     { display:flex; align-items: center;
     .hex-icon     { position:relative; width:167px; height:193px; margin-right:30px;
       svg         { position:absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
     }
-    .form         { padding: 0 30px; flex-grow:2; display:flex; align-items: center; background:#E8E8E8; border:solid 1px white; height:85px;
+    .form         { padding: 0 30px; flex-grow:2; display:flex; align-items: center; background:white; border:solid 1px white; height:85px;
       .selector   { display: flex; align-items: baseline; margin-right: 35px;
         .label    { margin-right:12px; color:#B5BFC7; text-transform: uppercase; font-weight: $bold; font-size: 13px;;
           &:after { content:" : "; }
         }
         .select   { }
       }
-      .arrow-btn  { margin-left: auto;  }
+      .arrow-btn  { margin-left: auto; }
     }
   }
 }

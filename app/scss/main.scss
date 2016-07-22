@@ -5,9 +5,12 @@ $stage-width : 960px;
 @import 'drop-down';
 
 //
-.app-launch{
+.app-launch   {
   @import 'step-manager';
-  .arrow-btn       { position:relative; display: flex; cursor: pointer; width:95px;
-    &:after        { content: "Next"; color: white; font-style:italic; position: absolute; left:45%; transform: translate(-50%, 0); top:10px; }
+  .arrow-btn  { position:relative; display: flex; cursor: pointer; width:95px;
+    &:after   { content: "Next"; color: white; font-style:italic; position: absolute; left:45%; transform: translate(-50%, 0); top:10px; font-size:16px}
+    svg       {
+      polygon { fill: $azul2; }
+    }
   }
 }

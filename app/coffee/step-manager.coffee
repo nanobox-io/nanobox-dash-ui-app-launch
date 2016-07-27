@@ -5,7 +5,7 @@ stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: ($el, @providers, @submitCb) ->
+  constructor: ($el, @providers, @submitCb, @cancelCb) ->
     @$node = $ stepManager( {} )
     $el.append @$node
 
@@ -15,6 +15,7 @@ module.exports = class StepManager
     @$steps       = $ ".steps", @$node
     @$currentStep = $ "#current-step", @$node
     @$stepTitle   = $ ".step-title", @$node
+    $(".ui-btn.cancel", @$node).on "click", @cancelCb
 
     $holder = $ '.steps', @$node
     castShadows @$node

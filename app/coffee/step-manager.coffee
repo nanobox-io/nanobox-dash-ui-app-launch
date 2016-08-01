@@ -70,12 +70,15 @@ module.exports = class StepManager
   getData : () =>
     data = @chooseProvider.getProviderAndRegion()
     for provider in @providers
-      if provider.id == data.provider
-        data.meta         = provider.meta
-        data.providerName = provider.name
-      for region in provider.regions
-        if region.id == data.region
-          data.regionName = region.name
+      for account in provider.accounts
+        if account.id == data.provider_account_id
+          data.meta         = provider.meta
+          data.providerName = provider.name
+          data.accountName  = account.name
+          data.accountId    = account.id
+        for region in provider.regions
+          if region.id == data.region
+            data.regionName = region.name
     data
 
   submitData : () =>

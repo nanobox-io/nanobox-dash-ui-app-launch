@@ -11,24 +11,45 @@ module.exports = class ChooseProvider extends Step
 
     $(".arrow-btn", @$node).on "click", ()=> @nextStepCb()
 
-    ar = []
+    @populateProviderDropDown()
+    super()
+
+  populateProviderDropDown : () ->
+    # Check to see if any of their providers have multiple accounts
     for provider in @providers
-      ar.push {name:provider.name, id: provider.id}
+      if provider.accounts.length > 1
+        multipleAccountsPerProvider = true
+        break
+
+    ar = []
+    if !multipleAccountsPerProvider
+      for provider in @providers
+        ar.push {name:provider.name, providerId: provider.id, id: provider.accounts[0].id }
+
+    else
+      for provider in @providers
+        ar.push {name:provider.name, isLabel:true }
+        for account in provider.accounts
+          ar.push {name:account.name, id: account.id }
 
     @provider = new DropDown $("#provider", @$node), ar, @onProviderChange
-    @onProviderChange ar[0].id
-    super()
+
+    if !multipleAccountsPerProvider
+      @onProviderChange ar[0].id
+    else
+      @onProviderChange ar[1].id
 
   onProviderChange : (id) =>
     for provider in @providers
-      if provider.id == id
-        @regionDropDown?.destroy()
-        @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
-        $iconHolder = $(".provider-icon", @$node)
-        $iconHolder.empty()
-        $iconHolder.append $("<img data-src='#{provider.meta.icon}' class='shadow-icon' />")
-        castShadows $iconHolder
-
+      for account in provider.accounts
+        if account.id == id
+          @regionDropDown?.destroy()
+          @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
+          $iconHolder = $(".provider-icon", @$node)
+          $iconHolder.empty()
+          $iconHolder.append $("<img data-src='#{provider.meta.icon}' class='shadow-icon' />")
+          castShadows $iconHolder
+          return
 
   getTitle : () -> "Choose a Provider and Region"
 
@@ -37,4 +58,4 @@ module.exports = class ChooseProvider extends Step
     # @region = new DropDown $("#region", $node), ar, @onProviderChange
 
   getProviderAndRegion : () =>
-    {provider: @provider.val(), region:@regionDropDown.val()}
+    {provider_account_id: @provider.val(), region:@regionDropDown.val()}

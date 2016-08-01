@@ -3,12 +3,12 @@ DataShim = require './shims/data-shim'
 dataShim = new DataShim()
 
 
-onLaunchApp = (data) ->
+onLaunchApp = (data)=>
   console.log "Launching a new app with these specs:"
   console.log data
   # example output :  {provider: 'aws', region:'us_east'}
 
-onCancel = ()->
+onCancel = ()=>
   console.log "Canceling App"
 
 config =

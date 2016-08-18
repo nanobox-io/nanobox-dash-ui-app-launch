@@ -18,7 +18,9 @@ module.exports = class Summary extends Step
     @$whatsNext = $ ".whats-next", @meat
 
     castShadows @meat
-    $("#submit", @meat).on 'click', ()=>
+    @$submit = $("#submit", @meat)
+    @$submit.on 'click', ()=>
+      @$submit.addClass 'ing'
       @submitCb()
 
     $("#server-specs-toggle", @meat).on 'click', ()=>

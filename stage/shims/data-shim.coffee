@@ -8,17 +8,17 @@ module.exports = class DataShim
       id: 'do'
       name : "Digital Ocean"
       accounts: [
-        {
-          id             : "bd3ec1d3-91b7-4b5a-b6a9-86871f132304"
-          name           : "test-provider-account"
-          provider_id    : "do"
-          default_region : "sfo1"
-        },{
-          id             : "asdf090n"
-          name           : "test-provider-account"
-          provider_id    : "do"
-          default_region : "sfo1"
-        }
+        # {
+        #   id             : "bd3ec1d3-91b7-4b5a-b6a9-86871f132304"
+        #   name           : "test-provider-account"
+        #   provider_id    : "do"
+        #   default_region : "sfo1"
+        # },{
+        #   id             : "asdf090n"
+        #   name           : "test-provider-account"
+        #   provider_id    : "do"
+        #   default_region : "sfo1"
+        # }
       ]
       meta:
         icon: "digital-ocean"
@@ -46,10 +46,10 @@ module.exports = class DataShim
       id: 'aws'
       name : "AWS"
       accounts: [
-        id             : "iv103n"
-        name           : "main"
-        provider_id    : "aws"
-        default_region : "us-east-1"
+        # id             : "iv103n"
+        # name           : "main"
+        # provider_id    : "aws"
+        # default_region : "us-east-1"
       ]
       meta:
         icon: "aws"
@@ -85,10 +85,10 @@ module.exports = class DataShim
       id: 'gc'
       name : "Google Compute Engine"
       accounts: [
-        id             : "onf49wb"
-        name           : "work"
-        provider_id    : "gc"
-        default_region : "us-central1-a"
+        # id             : "onf49wb"
+        # name           : "work"
+        # provider_id    : "gc"
+        # default_region : "us-central1-a"
       ]
       meta:
         icon: "google-compute"

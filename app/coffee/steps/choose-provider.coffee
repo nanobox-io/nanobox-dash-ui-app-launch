@@ -44,6 +44,7 @@ module.exports = class ChooseProvider extends Step
       for account in provider.accounts
         if account.id == id
           @regionDropDown?.destroy()
+          @setDefaultRegion provider.regions, account.default_region
           @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
           $iconHolder = $(".provider-icon", @$node)
           $iconHolder.empty()
@@ -56,6 +57,15 @@ module.exports = class ChooseProvider extends Step
   onRegionChange : () ->
     # @region?.remove()
     # @region = new DropDown $("#region", $node), ar, @onProviderChange
+
+  setDefaultRegion : (regions, regionId) ->
+    for region in regions
+      if region.id == regionId
+        region.selected = true
+        return
+
+
+
 
   getProviderAndRegion : () =>
     {provider_account_id: @provider.val(), region:@regionDropDown.val()}

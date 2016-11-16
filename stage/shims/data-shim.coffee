@@ -8,17 +8,18 @@ module.exports = class DataShim
       id: 'do'
       name : "Digital Ocean"
       accounts: [
-        # {
-        #   id             : "bd3ec1d3-91b7-4b5a-b6a9-86871f132304"
-        #   name           : "test-provider-account"
-        #   provider_id    : "do"
-        #   default_region : "sfo1"
-        # },{
-        #   id             : "asdf090n"
-        #   name           : "test-provider-account"
-        #   provider_id    : "do"
-        #   default_region : "sfo1"
-        # }
+        {
+          id             : "bd3ec1d3-91b7-4b5a-b6a9-86871f132304"
+          name           : "Personal"
+          provider_id    : "do"
+          default_region : "sfo1"
+        },
+        {
+          id             : "bd33-91b7-4b5a-b6a9-86871f132304"
+          name           : "work"
+          provider_id    : "do"
+          default_region : "am3"
+        }
       ]
       meta:
         icon: "digital-ocean"
@@ -46,10 +47,10 @@ module.exports = class DataShim
       id: 'aws'
       name : "AWS"
       accounts: [
-        # id             : "iv103n"
-        # name           : "main"
-        # provider_id    : "aws"
-        # default_region : "us-east-1"
+        id             : "iv103n"
+        name           : "main"
+        provider_id    : "aws"
+        default_region : "us-gov-west-1"
       ]
       meta:
         icon: "aws"
@@ -61,34 +62,40 @@ module.exports = class DataShim
           {metric:"transfer", val: "2 TB"}
         ]
       regions  : [
-        {name:"US East", isLabel:true}
-        {name:"N. Virginia", id:"us-east-1"}
-        {name:"US West", isLabel:true}
-        {name:"Oregon", id:"us-west-2"}
-        {name:"N. California", id:"us-west-1"}
-        {name:"AWS GovCloud", id:"us-gov-west-1"}
-        {name:"EU", isLabel:true}
-        {name:"Ireland", id:"eu-west-1"}
-        {name:"Frankfurt", id:"eu-central-1"}
-        {name:"Asia Pacific", isLabel:true}
-        {name:"Singapore", id:"ap-southeast-1"}
-        {name:"Tokyo", id:"ap-northeast-1"}
-        {name:"Seoul", id:"ap-northeast-2"}
-        {name:"Sydney", id:"ap-southeast-2"}
-        {name:"South America", isLabel:true}
-        {name:"São Paulo", id:"sa-east-1"}
-        {name:"China", isLabel:true}
-        {name:"Beijing", id:"cn-north-1"}
+        {group:"US East", items:[
+          {name:"N. Virginia", id:"us-east-1"}
+        ]}
+        {group:"US West", items:[
+          {name:"Oregon", id:"us-west-2"}
+          {name:"N. California", id:"us-west-1"}
+          {name:"AWS GovCloud", id:"us-gov-west-1"}
+        ]}
+        {group:"EU", items:[
+          {name:"Ireland", id:"eu-west-1"}
+          {name:"Frankfurt", id:"eu-central-1"}
+        ]}
+        {group:"Asia Pacific", items:[
+          {name:"Singapore", id:"ap-southeast-1"}
+          {name:"Tokyo", id:"ap-northeast-1"}
+          {name:"Seoul", id:"ap-northeast-2"}
+          {name:"Sydney", id:"ap-southeast-2"}
+        ]}
+        {group:"South America", items:[
+          {name:"São Paulo", id:"sa-east-1"}
+        ]}
+        {group:"China", items:[
+          {name:"Beijing", id:"cn-north-1"}
+        ]}
       ]
     },
     {
       id: 'gc'
       name : "Google Compute Engine"
       accounts: [
-        # id             : "onf49wb"
-        # name           : "work"
-        # provider_id    : "gc"
-        # default_region : "us-central1-a"
+        id             : "onf49wb"
+        name           : "work"
+        provider_id    : "gc"
+        default_region : "us-central1-a"
       ]
       meta:
         icon: "google-compute"
@@ -100,23 +107,27 @@ module.exports = class DataShim
           {metric:"transfer", val: "2 TB"}
         ]
       regions : [
-        {name:"Easter United States", isLabel:true}
-        {name:"South Carolina - B", id: "us-east1-b"}
-        {name:"South Carolina - C", id: "us-east1-c"}
-        {name:"South Carolina - D", id: "us-east1-d"}
-        {name:"Central United States", isLabel:true}
-        {name:"Iowa - A", id: "us-central1-a"}
-        {name:"Iowa - B", id: "us-central1-b"}
-        {name:"Iowa - C", id: "us-central1-c"}
-        {name:"Iowa - F", id: "us-central1-f"}
-        {name:"Western Europe", isLabel:true}
-        {name:"Belgium - B", id: "europe-west1-b"}
-        {name:"Belgium - C", id: "europe-west1-c"}
-        {name:"Belgium - D", id: "europe-west1-d"}
-        {name:"East Asia", isLabel:true}
-        {name:"Taiwan - A", id: "asia-east1-a"}
-        {name:"Taiwan - B", id: "asia-east1-b"}
-        {name:"Taiwan - C", id: "asia-east1-c"}
+        {group:"Easter United States", items:[
+          {name:"South Carolina - B", id: "us-east1-b"}
+          {name:"South Carolina - C", id: "us-east1-c"}
+          {name:"South Carolina - D", id: "us-east1-d"}
+        ]}
+        {group:"Central United States", items:[
+          {name:"Iowa - A", id: "us-central1-a"}
+          {name:"Iowa - B", id: "us-central1-b"}
+          {name:"Iowa - C", id: "us-central1-c"}
+          {name:"Iowa - F", id: "us-central1-f"}
+        ]}
+        {group:"Western Europe", items:[
+          {name:"Belgium - B", id: "europe-west1-b"}
+          {name:"Belgium - C", id: "europe-west1-c"}
+          {name:"Belgium - D", id: "europe-west1-d"}
+        ]}
+        {group:"East Asia", items:[
+          {name:"Taiwan - A", id: "asia-east1-a"}
+          {name:"Taiwan - B", id: "asia-east1-b"}
+          {name:"Taiwan - C", id: "asia-east1-c"}
+        ]}
       ]
     }
   ]

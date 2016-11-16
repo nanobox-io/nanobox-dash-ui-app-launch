@@ -1,6 +1,6 @@
 chooseProvider = require 'jade/choose-provider'
-DropDown       = require 'drop-down'
 Step           = require 'steps/step'
+select         = require 'jade/select'
 
 module.exports = class ChooseProvider extends Step
 
@@ -24,28 +24,32 @@ module.exports = class ChooseProvider extends Step
     ar = []
     if !multipleAccountsPerProvider
       for provider in @providers
-        ar.push {name:provider.name, providerId: provider.id, id: provider.accounts[0].id }
+        ar.push {name:provider.name, id:provider.accounts[0].id}
 
     else
       for provider in @providers
-        ar.push {name:provider.name, isLabel:true }
+        obj = {group:provider.name, items:[]}
+        ar.push obj
         for account in provider.accounts
-          ar.push {name:account.name, id: account.id }
+          obj.items.push {name:account.name, id:account.id}
 
-    @provider = new DropDown $("#provider", @$node), ar, @onProviderChange
+    $node = $(select( {items:ar} ))
+    $node.on 'change', (e)=> @onProviderChange e.currentTarget.value
+    $node.trigger 'change'
+    $("#provider", @$node).append $node
+    lexify $("#provider", @$node)
 
-    if !multipleAccountsPerProvider
-      @onProviderChange ar[0].id
-    else
-      @onProviderChange ar[1].id
-
-  onProviderChange : (id) =>
+  onProviderChange : (@currentProviderId) =>
     for provider in @providers
       for account in provider.accounts
-        if account.id == id
+        if account.id == @currentProviderId
           @regionDropDown?.destroy()
           @setDefaultRegion provider.regions, account.default_region
-          @regionDropDown = new DropDown $("#region", @$node), provider.regions, @onRegionChange
+          $node = $(select( {items:provider.regions} ))
+          $node.on 'change', (e)=> @onRegionChange e.currentTarget.value
+          $node.trigger 'change'
+          $("#region", @$node).empty().append $node
+          lexify $("#region", @$node)
           $iconHolder = $(".provider-icon", @$node)
           $iconHolder.empty()
           $iconHolder.append $("<img data-src='#{provider.meta.icon}' class='shadow-icon' />")
@@ -54,18 +58,17 @@ module.exports = class ChooseProvider extends Step
 
   getTitle : () -> "Choose a Provider and Region"
 
-  onRegionChange : () ->
-    # @region?.remove()
-    # @region = new DropDown $("#region", $node), ar, @onProviderChange
+  onRegionChange : (@currentRegion) ->
 
   setDefaultRegion : (regions, regionId) ->
     for region in regions
       if region.id == regionId
         region.selected = true
         return
-
-
-
+      if region.items?
+        for subRegion in region.items
+          if subRegion.id == regionId
+            subRegion.selected = true
 
   getProviderAndRegion : () =>
-    {provider_account_id: @provider.val(), region:@regionDropDown.val()}
+    {provider_account_id: @currentProviderId, region:@currentRegion}

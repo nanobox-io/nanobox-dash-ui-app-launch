@@ -1,14 +1,12 @@
-NameApp        = require 'steps/name-app'
-ChooseProvider = require 'steps/choose-provider'
-Summary        = require 'steps/summary'
 stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: ($el, @providers, @submitCb, @cancelCb) ->
+  constructor: (@$el, @cancelCb) ->
     @$node = $ stepManager( {} )
-    $el.append @$node
+    @$el.append @$node
 
+  build : () ->
     $(".ui-btn.back", @$node).on 'click', ()=> @previousStep()
 
     @$wrapper     = $ '.step-wrapper', @$node
@@ -17,17 +15,13 @@ module.exports = class StepManager
     @$stepTitle   = $ ".step-title", @$node
     $(".ui-btn.cancel", @$node).on "click", @cancelCb
 
-    $holder = $ '.steps', @$node
     castShadows @$node
+    return $('.steps', @$node)
 
-    @nameApp        = new NameApp $holder, @nextStep
-    @chooseProvider = new ChooseProvider $holder, @nextStep, @providers
-    @summary        = new Summary $holder, @submitData, @getData
+  addSteps : (steps) ->
     @$allSteps    = $ ".launch-step", @$node
-
-    ar = [ @nameApp, @chooseProvider, @summary ]
-    @steps = new Sequin( ar )
-
+    @steps = new Sequin( steps )
+    @$allSteps.css width: @$el.width()
     @slideToCurrentStep()
 
   slideToCurrentStep : ()->
@@ -67,21 +61,8 @@ module.exports = class StepManager
     @steps.prev()
     @slideToCurrentStep()
 
-  getData : () =>
-    data = @chooseProvider.getProviderAndRegion()
-    for provider in @providers
-      for account in provider.accounts
-        if account.id == data.provider_account_id
-          data.meta         = provider.meta
-          data.providerName = provider.name
-          data.accountName  = account.name
-          data.accountId    = account.id
-        for region in provider.regions
-          if region.id == data.region
-            data.regionName = region.name
-    data
-
-  submitData : () =>
-    data      = @chooseProvider.getProviderAndRegion()
-    data.name = @nameApp.getAppName()
-    @submitCb data
+  destroy : ()->
+    @$el.empty()
+    $(".ui-btn.cancel", @$node).off()
+    $(".ui-btn.back", @$node).off()
+    @$allSteps = @$node = @steps = @currentStep = @$stepTitle = @$wrapper = null

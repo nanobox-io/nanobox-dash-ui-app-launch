@@ -1,5 +1,5 @@
-chooseProvider = require 'jade/choose-provider'
-Step           = require 'steps/step'
+chooseProvider = require 'jade/app-launch/choose-provider'
+Step           = require 'step'
 select         = require 'jade/select'
 
 module.exports = class ChooseProvider extends Step

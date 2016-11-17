@@ -2,18 +2,28 @@ DataShim = require './shims/data-shim'
 
 dataShim = new DataShim()
 
+app = new nanobox.AppLaunch $(".steps-wrapper")
+
+# ------------------------------------ App Cretae
 
 onLaunchApp = (data)=>
   console.log "Launching a new app with these specs:"
   console.log data
   # example output :  {provider: 'aws', region:'us_east'}
 
-onCancel = ()=>
-  console.log "Canceling App"
+onCancelAppCreate = ()=> console.log "Canceling app creation"
 
-config =
+appCreateConfig =
   providers    : dataShim.getProviders()
   appLaunchCb  : onLaunchApp
-  onCancel     : onCancel
+  onCancel     : onCancelAppCreate
 
-app = new nanobox.AppLaunch $(".steps-wrapper"), config
+# app.createAppLauncher appCreateConfig
+
+# ------------------------------------ Add Provider
+
+onCancelProviderAdd = ()-> console.log "Canceling provider add"
+providerConfig = {
+  onCancel : onCancelProviderAdd
+}
+app.addProvider providerConfig

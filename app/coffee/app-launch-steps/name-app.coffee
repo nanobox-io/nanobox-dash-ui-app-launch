@@ -1,5 +1,5 @@
-nameApp = require 'jade/name-app'
-Step    = require 'steps/step'
+nameApp = require 'jade/app-launch/name-app'
+Step    = require 'step'
 
 module.exports = class NameApp extends Step
 

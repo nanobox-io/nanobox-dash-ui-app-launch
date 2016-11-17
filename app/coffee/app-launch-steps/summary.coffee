@@ -1,6 +1,6 @@
-Step        = require 'steps/step'
-summary     = require 'jade/summary'
-summaryMeat = require 'jade/summary-meat'
+Step        = require 'step'
+summary     = require 'jade/app-launch/summary'
+summaryMeat = require 'jade/app-launch/summary-meat'
 
 module.exports = class Summary extends Step
 

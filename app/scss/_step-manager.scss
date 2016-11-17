@@ -2,11 +2,14 @@
   .step-wrapper    { position: relative;
     $easing : cubic-bezier(0.840, 0.005, 0.000, 1.000);
 
-    .steps         { position: absolute; display: flex; @include transition(all, 350ms, $easing);
-      .launch-step { width: $stage-width; flex-shrink: 0; opacity:0; @include transition(opacity, 450ms, $easing);
-        @import 'name-app';
-        @import 'choose-provider';
-        @import 'summary';
+    .steps         {position: absolute; display: flex; @include transition(all, 350ms, $easing);
+      .launch-step {flex-shrink: 0; opacity:0; @include transition(opacity, 450ms, $easing);
+        @import 'app-launch/name-app';
+        @import 'app-launch/choose-provider';
+        @import 'app-launch/summary';
+        @import 'provider-machine/provider';
+        @import 'provider-machine/authentication';
+        @import 'provider-machine/finalize';
         &.active   { opacity:1; }
       }
     }

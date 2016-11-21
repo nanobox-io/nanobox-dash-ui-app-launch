@@ -1,1 +1,26 @@
-.launch-step.provider
+.launch-step.provider-kind
+  .provider-kinds
+    .kind
+      input.lexi(type='radio' name='provider-kind' value="official" checked="checked")
+      .txt Official Providers
+    .kind
+      input.lexi(type='radio' name='provider-kind' value="custom")
+      .txt Custom Provider
+    .arrow-button#next
+      .txt Proceed
+  
+  .providers
+    .official
+      each provider in officialProviders
+        .provider(id="#{provider.id}")
+          .icon
+            img.shadow-icon(data-src="#{provider.icon}" scalable='true')
+          .txt= provider.name
+          input.lexi(type='radio' name='provider' value="#{provider.id}")
+    .custom
+      .endpoint
+        .endpoint-row
+          .txt Provider Endpoint :
+          input#endpoint-url
+        .arrow-button.no-arrow#test-endpoint
+          .txt Test Endpoint

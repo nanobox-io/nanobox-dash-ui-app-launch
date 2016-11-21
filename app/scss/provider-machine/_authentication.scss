@@ -1,3 +1,4 @@
-&.authentication{
-  
+&.authentication {display: flex; flex-direction:column;
+  .arrow-button  {align-self: flex-end;}
+  .instructions  {padding:40px 0 0; border-top: solid 1px #C9D7E4; margin-top:30px; font-size:16px; font-weight: $semibold; font-style:italic; color:#527685; }
 }

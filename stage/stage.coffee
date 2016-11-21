@@ -1,6 +1,8 @@
-DataShim = require './shims/data-shim'
+AppLaunchShim       = require './shims/app-launch-shim'
+ProviderMachineShim = require './shims/add-provider-shim'
 
-dataShim = new DataShim()
+appLaunchShim = new AppLaunchShim()
+providerShim  = new ProviderMachineShim()
 
 app = new nanobox.AppLaunch $(".steps-wrapper")
 
@@ -14,7 +16,7 @@ onLaunchApp = (data)=>
 onCancelAppCreate = ()=> console.log "Canceling app creation"
 
 appCreateConfig =
-  providers    : dataShim.getProviders()
+  providers    : appLaunchShim.getProviders()
   appLaunchCb  : onLaunchApp
   onCancel     : onCancelAppCreate
 
@@ -22,8 +24,44 @@ appCreateConfig =
 
 # ------------------------------------ Add Provider
 
+
+
 onCancelProviderAdd = ()-> console.log "Canceling provider add"
-providerConfig = {
-  onCancel : onCancelProviderAdd
-}
+
+endpointTester = (endpoint, cb) ->
+  console.log "Testing endpoint : #{endpoint} (fake)"
+  setTimeout ()=>
+    cb
+      verified : true
+      error    : false
+      provider : providerShim.getUnofficialProvider()
+  ,
+    1200 * Math.random()
+
+verifyAccount = (provider, fields, cb)->
+  console.log "fields:"
+  console.log fields
+  console.log "provider:"
+  console.log provider
+  setTimeout ()->
+    cb
+      verified: true
+      error: false
+  ,
+    1200 * Math.random()
+
+addProvider = (data) ->
+  console.log data.provider
+  console.log data.authentication
+  console.log data.name
+  console.log data.defaultRegion
+
+providerConfig =
+  onCancel          : onCancelProviderAdd
+  officialProviders : providerShim.getOfficialProviders()
+  endpointTester    : endpointTester
+  verifyAccount     : verifyAccount
+  addProviderCb     : addProvider
+
+
 app.addProvider providerConfig

@@ -1,3 +1,40 @@
-&.provider{
-  
+&.provider-kind        {font-style:italic; font-size:16px; font-weight:$semibold; color:#527685;
+  .provider-kinds      {display: flex; align-items: center; padding:25px 0;
+    .kind              {display: flex;padding-right:40px; margin-right:40px;  cursor:pointer;
+      .txt             {padding-left:10px; }
+    }
+    .arrow-button      {margin-left:auto; }
+  }
+
+  .providers           {
+    >.hidden           {display: none !important; }
+    // official
+    .official          {background:white; display:flex; padding:30px; flex-wrap: wrap;
+      .provider        {transition:outline-color 400ms; display: flex; flex-direction: column; align-items: center; width:25%; cursor: pointer; margin-bottom:40px; padding-bottom:20px; outline:solid 8px rgba(#E9EDF0,0);
+        &.active       {outline-color:rgba(#E9EDF0,1);}
+        .icon          {width:60px; height:100px; display: flex; align-items: center;}
+        .txt           {@include label; height:30px; margin:-5px 0 10px; width:90px; margin:0 auto; text-align: center;}
+        &#aws          {
+          .icon        {width:90px;}
+        }
+      }
+    }
+    // custom provider
+    .custom            {
+      .endpoint        {background: white; display: flex; flex-direction: column; padding:20px;
+        .endpoint-row  {display: flex; align-items: center; margin-bottom:20px;
+          .txt         {@include label; margin-right:10px; }
+          input        {background: #F0F3F5; height:35px; flex-grow:2; }
+        }
+        $verified-color:#00AF5B;
+        .arrow-button  {margin-left:auto;
+          &.verified   {background: $verified-color; position: relative;
+            &:before   {content:"Valid Endpoint! Proceed when ready."; position: absolute; left:-310px; ; color:green; }
+            &.disabled {opacity:1; background: rgba($verified-color, 0.3) }
+          }
+        }
+      }
+
+    }
+  }
 }

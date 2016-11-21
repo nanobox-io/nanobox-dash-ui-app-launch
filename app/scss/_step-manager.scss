@@ -4,6 +4,17 @@
 
     .steps         {position: absolute; display: flex; @include transition(all, 350ms, $easing);
       .launch-step {flex-shrink: 0; opacity:0; @include transition(opacity, 450ms, $easing);
+        table          {margin:40px 0 0;
+          tr           {}
+          td           {vertical-align: middle; padding-bottom: 20px; white-space:nowrap;
+            &.label    {@include label;padding-right:10px;
+              &:after  {content:" : "}
+            }
+            &:last-of-type   {width: 100%;
+              input    { width:100%; }
+            }
+          }
+        }
         @import 'app-launch/name-app';
         @import 'app-launch/choose-provider';
         @import 'app-launch/summary';

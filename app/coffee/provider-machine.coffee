@@ -11,10 +11,16 @@ module.exports = class ProviderMachine
 
   createSteps : () ->
     $holder         = @stepManager.build()
-    @provider       = new Provider $holder, @stepManager.nextStep
-    @authentication = new Authentication $holder, @stepManager.nextStep
-    @finalize       = new Finalize $holder, @submitData
+    @provider       = new Provider $holder, @stepManager.nextStep, @config.officialProviders, @config.endpointTester
+    @authentication = new Authentication $holder, @stepManager.nextStep, @provider.getProvider, @config.verifyAccount
+    @finalize       = new Finalize $holder, @provider.getProvider, @submitData
     steps = [@provider, @authentication, @finalize]
     @stepManager.addSteps steps
 
-  submitData : () ->
+  submitData : () =>
+    data =
+      provider       : @provider.getProvider()
+      authentication : @authentication.getAuthentication()
+      name           : @finalize.getName()
+      defaultRegion  : @finalize.getDefaultRegion()
+    @config.addProviderCb data

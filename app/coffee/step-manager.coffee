@@ -32,7 +32,7 @@ module.exports = class StepManager
     @$currentStep.text @steps.currentItemIndex+1
     @$stepTitle.text @currentStep.getTitle()
 
-    @$allSteps.removeClass 'active'
+    $( ".launch-step", @$node).removeClass 'active'
     @currentStep.$node.addClass 'active'
     left = - @steps.currentItem().$node.position().left
 

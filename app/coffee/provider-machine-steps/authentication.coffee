@@ -14,7 +14,10 @@ module.exports = class Authentication extends Step
       @$content.remove()
     @$content = $ authentication( @provider )
     @$node.append @$content
-    $('#verify-proceed', @$node).on 'click', ()=>
+
+    $verifyBtn = $('#verify-proceed', @$node)
+    $verifyBtn.on 'click', ()=>
+      $verifyBtn.addClass 'ing'
       $rows = $("tr", @$node)
       @authenticationFields = {}
       for row in $rows
@@ -22,8 +25,10 @@ module.exports = class Authentication extends Step
         key = $( ".field", $row).attr "data-key"
         @authenticationFields[key] = $( "input", $row).val()
       @verifyAccount @provider, @authenticationFields, (results)=>
+        $verifyBtn.removeClass 'ing'
         if !results.error
           @nextStepCb()
+          @clearError()
         else
           @showErrors results.error
 

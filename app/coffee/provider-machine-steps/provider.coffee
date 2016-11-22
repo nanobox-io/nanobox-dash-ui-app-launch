@@ -37,6 +37,7 @@ module.exports = class Provider extends Step
   getTitle : () -> "Choose a hosting provider"
 
   onEndpointTest : (results) =>
+    @$testEndpointBtn.removeClass 'ing'
     if !results.error
       @clearError()
       @chosenProvider = results.provider
@@ -93,5 +94,7 @@ module.exports = class Provider extends Step
     $endpointField = $("#endpoint-url")
     $endpointField.on 'input', ()=>
       @resetCustomUi()
-    $("#test-endpoint").on 'click', ()=>
+    @$testEndpointBtn = $("#test-endpoint")
+    @$testEndpointBtn.on 'click', ()=>
+      @$testEndpointBtn.addClass 'ing'
       @endpointTester $endpointField.val(), @onEndpointTest

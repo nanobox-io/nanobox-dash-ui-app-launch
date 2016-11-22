@@ -38,7 +38,7 @@ endpointTester = (endpoint, cb) ->
     cb data
 
   ,
-    200 * Math.random()
+    1200 * Math.random()
 
 verifyAccount = (provider, fields, cb)->
   console.log "fields:"

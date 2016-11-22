@@ -29,7 +29,7 @@
         $verified-color:#00AF5B;
         .arrow-button  {margin-left:auto;
           &.verified   {background: $verified-color; position: relative;
-            &:before   {content:"Valid Endpoint! Proceed when ready."; position: absolute; left:-310px; ; color:green; }
+            .txt:before   {content:"Valid Endpoint! Proceed when ready."; position: absolute; left:-310px; ; color:#00A15D; border-bottom:solid 3px; }
             &.disabled {opacity:1; background: rgba($verified-color, 0.3) }
           }
         }

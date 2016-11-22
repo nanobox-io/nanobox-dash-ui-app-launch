@@ -15,10 +15,10 @@ module.exports = class Provider extends Step
   getProvider : () =>
     @chosenProvider
 
-
   # ------------------------------------ Event Listeners
 
   changeProviderKind : (kind) ->
+    @clearError()
     if kind == "official"
       $(".official", @$node).removeClass 'hidden'
       $(".custom", @$node).addClass 'hidden'
@@ -37,10 +37,13 @@ module.exports = class Provider extends Step
   getTitle : () -> "Choose a hosting provider"
 
   onEndpointTest : (results) =>
-    if results.verified
+    if !results.error
+      @clearError()
       @chosenProvider = results.provider
       @$next.removeClass 'disabled'
       $("#test-endpoint").addClass 'verified disabled'
+    else
+      @showErrors results.error
 
 
   # ------------------------------------ Helpers
@@ -59,6 +62,9 @@ module.exports = class Provider extends Step
       {name:"Joyent", icon:"joyent", id:"joyent", coming:true}
       # {name:"Linode", icon:"linode", id:"linode", coming:true}
     ]
+
+  # TODO: Decide how much validation we want to do..
+  validateField : (str)-> str.length > 0
 
   addEventListeners : () ->
     # Next

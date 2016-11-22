@@ -31,12 +31,14 @@ onCancelProviderAdd = ()-> console.log "Canceling provider add"
 endpointTester = (endpoint, cb) ->
   console.log "Testing endpoint : #{endpoint} (fake)"
   setTimeout ()=>
-    cb
-      verified : true
-      error    : false
+    data =
+      error    : "Unable to reach endpoint."
       provider : providerShim.getUnofficialProvider()
+    if Math.random() > 0.6 then data.error = false
+    cb data
+
   ,
-    1200 * Math.random()
+    200 * Math.random()
 
 verifyAccount = (provider, fields, cb)->
   console.log "fields:"
@@ -44,9 +46,10 @@ verifyAccount = (provider, fields, cb)->
   console.log "provider:"
   console.log provider
   setTimeout ()->
-    cb
-      verified: true
-      error: false
+    data =
+      error: "Unable to connect with your credentials"
+    if Math.random() < 0.6 then data.error = false
+    cb data
   ,
     1200 * Math.random()
 

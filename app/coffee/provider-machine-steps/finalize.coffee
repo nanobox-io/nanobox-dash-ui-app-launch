@@ -7,7 +7,10 @@ module.exports = class Finalize extends Step
     @$node         = $ finalize( {} )
     @$regionHolder = $ ".regions", @$node
     @$el.append @$node
-    $("#finalize-create", @$node).on 'click', @submit
+    $submitBtn = $("#finalize-create", @$node)
+    $submitBtn.on 'click', (e)=>
+      $submitBtn.addClass 'ing'
+      @submit()
 
   # ------------------------------------ API
 

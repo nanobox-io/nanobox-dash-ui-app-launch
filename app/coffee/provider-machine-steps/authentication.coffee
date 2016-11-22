@@ -22,10 +22,10 @@ module.exports = class Authentication extends Step
         key = $( ".field", $row).attr "data-key"
         @authenticationFields[key] = $( "input", $row).val()
       @verifyAccount @provider, @authenticationFields, (results)=>
-        # TODO: Add error handling..
-        # console.log results.error
-        # console.log results.verified
-        @nextStepCb()
+        if !results.error
+          @nextStepCb()
+        else
+          @showErrors results.error
 
   getAuthentication : ()-> @authenticationFields
   getTitle : () -> "Enter your #{@provider.name} credentials"

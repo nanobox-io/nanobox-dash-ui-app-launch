@@ -22,7 +22,7 @@ module.exports = class DataShim
         }
       ]
       meta:
-        icon: "digital-ocean"
+        icon: "custom"
         serverNickName: "Droplet"
         specs: [
           {metric:"ram", val: "512 MB"}

@@ -12,7 +12,7 @@ module.exports = class ProviderMachine
   createSteps : () ->
     $holder         = @stepManager.build()
     @provider       = new Provider $holder, @stepManager.nextStep, @config.officialProviders, @config.endpointTester
-    @authentication = new Authentication $holder, @stepManager.nextStep, @provider.getProvider, @config.verifyAccount
+    @authentication = new Authentication $holder, @stepManager.nextStep, @provider.getProvider, @provider.getEndpoint, @config.verifyAccount
     @finalize       = new Finalize $holder, @provider.getProvider, @submitData
     steps = [@provider, @authentication, @finalize]
     @stepManager.addSteps steps
@@ -23,4 +23,5 @@ module.exports = class ProviderMachine
       authentication : @authentication.getAuthentication()
       name           : @finalize.getName()
       defaultRegion  : @finalize.getDefaultRegion()
+      endpoint       : @provider.getEndpoint()
     @config.addProviderCb data

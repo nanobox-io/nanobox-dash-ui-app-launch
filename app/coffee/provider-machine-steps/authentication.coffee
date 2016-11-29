@@ -3,7 +3,7 @@ authentication = require 'jade/provider-machine/authentication'
 
 module.exports = class Authentication extends Step
 
-  constructor: (@$el, @nextStepCb, @getProvider, @verifyAccount) ->
+  constructor: (@$el, @nextStepCb, @getProvider, @getEndpoint, @verifyAccount) ->
     @$node = $ "<div class='launch-step authentication' />"
     @$el.append @$node
 
@@ -24,7 +24,7 @@ module.exports = class Authentication extends Step
         $row   = $(row)
         key = $( ".field", $row).attr "data-key"
         @authenticationFields[key] = $( "input", $row).val()
-      @verifyAccount @provider, @authenticationFields, (results)=>
+      @verifyAccount @provider, @authenticationFields, @getEndpoint(), (results)=>
         $verifyBtn.removeClass 'ing'
         if !results.error
           @nextStepCb()

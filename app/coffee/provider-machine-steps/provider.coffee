@@ -53,6 +53,8 @@ module.exports = class Provider extends Step
     @$next.addClass 'disabled'
     $("#test-endpoint").removeClass 'verified disabled'
 
+  getEndpoint : () => @endpoint
+
   getProviders : () ->
     [
       {name:"Digital Ocean", icon:"digital-ocean", id:"do"}
@@ -97,4 +99,5 @@ module.exports = class Provider extends Step
     @$testEndpointBtn = $("#test-endpoint")
     @$testEndpointBtn.on 'click', ()=>
       @$testEndpointBtn.addClass 'ing'
-      @endpointTester $endpointField.val(), @onEndpointTest
+      @endpoint = $endpointField.val()
+      @endpointTester @endpoint, @onEndpointTest

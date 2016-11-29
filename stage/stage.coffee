@@ -40,11 +40,13 @@ endpointTester = (endpoint, cb) ->
   ,
     1200 * Math.random()
 
-verifyAccount = (provider, fields, cb)->
-  console.log "fields:"
+verifyAccount = (provider, fields, endpoint, cb)->
+  console.log "Verifying Account:"
+  console.log "  fields:"
   console.log fields
-  console.log "provider:"
+  console.log "  provider:"
   console.log provider
+  console.log "  endpoint:\n  #{endpoint}"
   setTimeout ()->
     data =
       error: "Unable to connect with your credentials"
@@ -54,10 +56,9 @@ verifyAccount = (provider, fields, cb)->
     1200 * Math.random()
 
 addProvider = (data) ->
-  console.log data.provider
-  console.log data.authentication
-  console.log data.name
-  console.log data.defaultRegion
+  console.log "Finalize - Adding provider:"
+  console.log data
+
 
 providerConfig =
   onCancel          : onCancelProviderAdd

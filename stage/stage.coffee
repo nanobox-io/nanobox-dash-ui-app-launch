@@ -6,28 +6,58 @@ providerShim  = new ProviderMachineShim()
 
 app = new nanobox.AppLaunch $(".steps-wrapper")
 
-# ------------------------------------ App Cretae
+   ##   #####  #####     #        ##   #    # #    #  ####  #    #
+  #  #  #    # #    #    #       #  #  #    # ##   # #    # #    #
+ #    # #    # #    #    #      #    # #    # # #  # #      ######
+ ###### #####  #####     #      ###### #    # #  # # #      #    #
+ #    # #      #         #      #    # #    # #   ## #    # #    #
+ #    # #      #         ###### #    #  ####  #    #  ####  #    #
 
-onLaunchApp = (data)=>
+# Example of launching an app
+
+# Called on 'App Launch'
+onLaunchApp = (data, cb)->
   console.log "Launching a new app with these specs:"
   console.log data
+  setTimeout ()=>
+    cb {error:"That name was just taken, sorry. "}
+  ,
+    1800 * Math.random()
   # example output :  {provider: 'aws', region:'us_east'}
 
-onCancelAppCreate = ()=> console.log "Canceling app creation"
+# Called on 'cancel'
+onCancelAppCreate = ()-> console.log "Canceling app creation"
+
+# Used to validate if name isn't taken and is using valid characters
+fakeNameValidator = (appName, cb)->
+  setTimeout ()=>
+    if Math.random() > 0.5 then cb({}) else cb {error:"App name '#{appName}' already exists"}
+  ,
+    Math.random()*2000
 
 appCreateConfig =
-  providers    : appLaunchShim.getProviders()
-  appLaunchCb  : onLaunchApp
-  onCancel     : onCancelAppCreate
+  providers      : appLaunchShim.getProviders()
+  appLaunchCb    : onLaunchApp
+  onCancel       : onCancelAppCreate
+  validateNameCb : fakeNameValidator
+  # TODO : add the regex to the app launch name
 
 # app.createAppLauncher appCreateConfig
 
-# ------------------------------------ Add Provider
 
+   ##   #####  #####     #####  #####   ####  #    # # #####  ###### #####
+  #  #  #    # #    #    #    # #    # #    # #    # # #    # #      #    #
+ #    # #    # #    #    #    # #    # #    # #    # # #    # #####  #    #
+ ###### #    # #    #    #####  #####  #    # #    # # #    # #      #####
+ #    # #    # #    #    #      #   #  #    #  #  #  # #    # #      #   #
+ #    # #####  #####     #      #    #  ####    ##   # #####  ###### #    #
 
+# Example of adding a provider
 
+# On Cancel
 onCancelProviderAdd = ()-> console.log "Canceling provider add"
 
+# Provided to test an endpoint
 endpointTester = (endpoint, cb) ->
   console.log "Testing endpoint : #{endpoint} (fake)"
   setTimeout ()=>
@@ -40,6 +70,8 @@ endpointTester = (endpoint, cb) ->
   ,
     1200 * Math.random()
 
+# Called to test the user credentials and make sure
+# we can access their account
 verifyAccount = (provider, fields, endpoint, cb)->
   console.log "Verifying Account:"
   console.log "  fields:"
@@ -63,6 +95,7 @@ addProvider = (data) ->
 providerConfig =
   onCancel          : onCancelProviderAdd
   officialProviders : providerShim.getOfficialProviders()
+  customProviders   : providerShim.getCustomProviders()
   endpointTester    : endpointTester
   verifyAccount     : verifyAccount
   addProviderCb     : addProvider

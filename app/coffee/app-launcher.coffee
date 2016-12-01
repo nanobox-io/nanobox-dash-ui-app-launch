@@ -16,7 +16,7 @@ module.exports = class AppLauncher
 
   createSteps : () ->
     $holder         = @stepManager.build()
-    @nameApp        = new NameApp $holder, @stepManager.nextStep
+    @nameApp        = new NameApp $holder, @stepManager.nextStep, @config.validateNameCb
     @chooseProvider = new ChooseProvider $holder, @stepManager.nextStep, @config.providers
     @summary        = new Summary $holder, @submitData, @getData
     steps = [ @nameApp, @chooseProvider, @summary ]
@@ -37,9 +37,16 @@ module.exports = class AppLauncher
     data
 
   submitData : () =>
+    @summary.clearError()
     data      = @chooseProvider.getProviderAndRegion()
     data.name = @nameApp.getAppName()
-    @config.appLaunchCb data
+    @config.appLaunchCb data, @onSubmitComplete
+
+  # Called after submitting
+  onSubmitComplete : (data) =>
+    if data.error?
+      @summary.showErrors data.error
+
 
   userHasAtLeastOneAccount : (config) ->
     hasAccount = false

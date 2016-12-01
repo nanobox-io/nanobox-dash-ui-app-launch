@@ -9,7 +9,7 @@ module.exports = class ChooseProvider extends Step
     $el.append @$node
     castShadows @$node
 
-    $(".arrow-btn", @$node).on "click", ()=> @nextStepCb()
+    $(".arrow-button", @$node).on "click", ()=> @nextStepCb()
 
     @populateProviderDropDown()
     super()

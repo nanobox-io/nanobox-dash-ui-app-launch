@@ -1,7 +1,7 @@
 module.exports = class AddProviderShim
 
   constructor: () ->
-
+  getCustomProviders : ()->
   getOfficialProviders : ()->
     [
       {

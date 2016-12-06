@@ -52,8 +52,6 @@ module.exports = class ChooseProvider extends Step
           lexify $("#region", @$node)
           $iconHolder = $(".provider-icon", @$node)
           $iconHolder.empty()
-          if provider.meta.icon == "custom"
-            provider.meta.icon = "custom-provider-atoms"
           $iconHolder.append $("<img data-src='#{provider.meta.icon}' class='shadow-icon' />")
           castShadows $iconHolder
           return

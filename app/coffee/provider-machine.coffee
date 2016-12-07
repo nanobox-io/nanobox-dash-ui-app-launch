@@ -24,4 +24,8 @@ module.exports = class ProviderMachine
       name           : @finalize.getName()
       defaultRegion  : @finalize.getDefaultRegion()
       endpoint       : @provider.getEndpoint()
-    @config.addProviderCb data
+    @config.addProviderCb data, (results)=>
+      if results.error
+        @finalize.submitError results.error
+      else
+        @finalize.submitSuccessful results

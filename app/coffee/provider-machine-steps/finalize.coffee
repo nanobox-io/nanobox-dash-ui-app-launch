@@ -7,9 +7,10 @@ module.exports = class Finalize extends Step
     @$node         = $ finalize( {} )
     @$regionHolder = $ ".regions", @$node
     @$el.append @$node
-    $submitBtn = $("#finalize-create", @$node)
-    $submitBtn.on 'click', (e)=>
-      $submitBtn.addClass 'ing'
+    @$submitBtn = $("#finalize-create", @$node)
+    @$submitBtn.on 'click', (e)=>
+      @clearError()
+      @$submitBtn.addClass 'ing'
       @submit()
 
   # ------------------------------------ API
@@ -20,6 +21,15 @@ module.exports = class Finalize extends Step
     $select = $ providerSelect( {items:provider.regions, classes:"white"} )
     @$regionHolder.append $select
     lexify @$regionHolder
+
+  submitError : (error) =>
+    @showErrors error
+    @$submitBtn.removeClass 'ing'
+
+  submitSuccessful : (results)->
+    @$submitBtn.removeClass 'ing'
+    @$submitBtn.css 'pointer-events' : 'none'
+    $('.txt', @$submitBtn).text "Success!"
 
   getName : () => $("#account-name", @$el).val()
 

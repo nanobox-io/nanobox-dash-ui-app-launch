@@ -42,7 +42,7 @@ appCreateConfig =
   validateNameCb : fakeNameValidator
   # TODO : add the regex to the app launch name
 
-app.createAppLauncher appCreateConfig
+# app.createAppLauncher appCreateConfig
 
 
    ##   #####  #####     #####  #####   ####  #    # # #####  ###### #####
@@ -87,10 +87,16 @@ verifyAccount = (provider, fields, endpoint, cb)->
   ,
     1200 * Math.random()
 
-addProvider = (data) ->
+addProvider = (data, cb) ->
   console.log "Finalize - Adding provider:"
   console.log data
-
+  setTimeout ()->
+    data =
+      error: "There was a problem adding this provider.."
+    if Math.random() < 0.5 then data.error = false
+    cb data
+  ,
+    1200 * Math.random()
 
 providerConfig =
   onCancel          : onCancelProviderAdd
@@ -101,4 +107,4 @@ providerConfig =
   addProviderCb     : addProvider
 
 
-# app.addProvider providerConfig
+app.addProvider providerConfig

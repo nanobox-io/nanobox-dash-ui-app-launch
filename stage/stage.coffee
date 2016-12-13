@@ -20,6 +20,7 @@ onLaunchApp = (data, cb)->
   console.log "Launching a new app with these specs:"
   console.log data
   setTimeout ()=>
+    console.log "calling error"
     cb {error:"That name was just taken, sorry. "}
   ,
     1800 * Math.random()
@@ -31,7 +32,7 @@ onCancelAppCreate = ()-> console.log "Canceling app creation"
 # Used to validate if name isn't taken and is using valid characters
 fakeNameValidator = (appName, cb)->
   setTimeout ()=>
-    if Math.random() > 0.5 then cb({}) else cb {error:"App name '#{appName}' already exists"}
+    if Math.random() > 0.3 then cb({}) else cb {error:"App name '#{appName}' already exists"}
   ,
     Math.random()*2000
 
@@ -42,7 +43,7 @@ appCreateConfig =
   validateNameCb : fakeNameValidator
   # TODO : add the regex to the app launch name
 
-# app.createAppLauncher appCreateConfig
+app.createAppLauncher appCreateConfig
 
 
    ##   #####  #####     #####  #####   ####  #    # # #####  ###### #####
@@ -107,4 +108,4 @@ providerConfig =
   addProviderCb     : addProvider
 
 
-app.addProvider providerConfig
+# app.addProvider providerConfig

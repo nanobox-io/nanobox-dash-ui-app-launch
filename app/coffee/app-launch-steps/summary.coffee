@@ -28,6 +28,10 @@ module.exports = class Summary extends Step
 
     @$node.append @meat
 
+  submissionError : (error) ->
+    @$submit.removeClass 'ing'
+    @showErrors error
+
   getTitle : () -> "Review and Submit"
 
   activate : () ->

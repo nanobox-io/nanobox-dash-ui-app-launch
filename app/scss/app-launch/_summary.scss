@@ -8,7 +8,7 @@
           &.google-compute        {width: 33px; margin-top:-24px; }
           &.aws                   {width: 53px; margin-top:-17px; }
           &.digital-ocean         {width: 33px; margin-top:-10px; }
-          &.custom-provider-atoms {width: 36px; margin-top:-22px;
+          &.custom                {width: 36px; margin-top:-22px;
             svg *                 {stroke:#009FEF; stroke-width:0.4px;}
           }
         }
@@ -63,4 +63,5 @@
       .smiler                     {margin:0 auto; width:37px; }
     }
   }
+  .step-error{bottom: 103.5%;}
 }

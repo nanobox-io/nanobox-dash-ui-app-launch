@@ -45,7 +45,7 @@ module.exports = class AppLauncher
   # Called after submitting
   onSubmitComplete : (data) =>
     if data.error?
-      @summary.showErrors data.error
+      @summary.submissionError data.error
 
 
   userHasAtLeastOneAccount : (config) ->

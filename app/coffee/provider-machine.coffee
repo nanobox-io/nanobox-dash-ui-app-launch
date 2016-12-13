@@ -2,11 +2,22 @@ StepManager    = require 'step-manager'
 Provider       = require 'provider-machine-steps/provider'
 Authentication = require 'provider-machine-steps/authentication'
 Finalize       = require 'provider-machine-steps/finalize'
+noProvider     = require 'jade/no-provider'
 
 module.exports = class ProviderMachine
 
-  constructor: ($el, @config) ->
-    @stepManager = new StepManager $el, @config.onCancel
+  constructor: (@$el, @config) ->
+    if @config.hasAccounts
+      @go()
+    else
+      $node = $ noProvider( {} )
+      @$el.append $node
+      $("#connect-provider", $node).on 'click', ()=> @go()
+      castShadows $node
+
+  go : ()->
+    @$el.empty()
+    @stepManager = new StepManager @$el, @config.onCancel
     @createSteps()
 
   createSteps : () ->

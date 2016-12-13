@@ -7,12 +7,8 @@ Summary        = require 'app-launch-steps/summary'
 module.exports = class AppLauncher
 
   constructor: ($el, @config) ->
-    if @userHasAtLeastOneAccount(@config)
-      @stepManager = new StepManager $el, @config.onCancel
-      @createSteps()
-    else
-      $node = $ noProvider( {} )
-      $el.append $node
+    @stepManager = new StepManager $el, @config.onCancel
+    @createSteps()
 
   createSteps : () ->
     $holder         = @stepManager.build()

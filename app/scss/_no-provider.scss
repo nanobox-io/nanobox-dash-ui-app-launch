@@ -1,7 +1,6 @@
-.no-provider {display: flex; flex-direction: column; align-items: center; margin-top:150px;
-  .title     { text-transform:uppercase; color: #547F91; font-size:17px; margin-bottom:20px; letter-spacing: 0.06em; }
-  button     {background: #22BAFD; font-weight:bold; font-size:15px; padding:0 20px;
-    &:after  {display:none; }
-    &:hover  {color:white; background: #00A8F2;}
+.no-provider {max-width:385px; margin:0 auto; text-align: center; font-style:italic; font-size:18px; font-weight: $semibold;
+  .btn       {background:#1EB8FF; color:white; font-size:16px; display: inline-block; padding:10px 30px; margin:30px 0 50px; cursor:pointer;
+    &:hover  {background:#0B97E6;}
   }
+  .blurb     {color:#ABC1D2; line-height: 1.5}
 }

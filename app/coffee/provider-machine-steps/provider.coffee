@@ -3,8 +3,8 @@ provider = require 'jade/provider-machine/provider'
 
 module.exports = class Provider extends Step
 
-  constructor: ($el, @nextStepCb, @officialProviders, @endpointTester) ->
-    @$node = $ provider( {officialProviders:@officialProviders} )
+  constructor: ($el, @nextStepCb, @officialProviders, @customProviders, @endpointTester) ->
+    @$node = $ provider( {officialProviders:@officialProviders, customProviders:@customProviders} )
     $el.append @$node
     castShadows @$node
     lexify @$node
@@ -20,17 +20,45 @@ module.exports = class Provider extends Step
   changeProviderKind : (kind) ->
     @clearError()
     if kind == "official"
-      $(".official", @$node).removeClass 'hidden'
-      $(".custom", @$node).addClass 'hidden'
-      @$next.removeClass 'disabled'
+      @activateOfficalProviders()
     else
-      $(".official", @$node).addClass 'hidden'
-      $(".custom", @$node).removeClass 'hidden'
-      @$next.addClass 'disabled'
+      @activateCustomProviders()
 
+  activateOfficalProviders : () ->
+    $(".official", @$node).removeClass 'hidden'
+    $(".custom", @$node).addClass 'hidden'
+    $(@$officialProvider[0]).trigger 'click'
+    @$next.removeClass 'disabled'
+
+  activateCustomProviders : () ->
+    $(".official", @$node).addClass 'hidden'
+    $(".custom", @$node).removeClass 'hidden'
+    # If there are existing custom providers, click the first one
+    if @customProviders.length > 0
+      $(@$customProvider[0]).trigger 'click'
+      # @resetCustomUi()
+    # Else they are adding a custom endpoint and
+    # disable next button until it's been verified
+    else
+      if !@endpointValidated
+        @$next.addClass 'disabled'
 
   changeOfficialProvider : (id) =>
     for provider in @officialProviders
+      if id == provider.id
+        @chosenProvider = provider
+
+  changeCustomProvider : (id) =>
+    # If they are adding a new custom provider
+    if id == 'new-custom'
+      if !@endpointValidated
+        @$next.addClass 'disabled'
+      $(".endpoint", @$node).removeClass 'hidden'
+    else
+      @$next.removeClass 'disabled'
+      $(".endpoint", @$node).addClass 'hidden'
+
+    for provider in @customProviders
       if id == provider.id
         @chosenProvider = provider
 
@@ -39,6 +67,7 @@ module.exports = class Provider extends Step
   onEndpointTest : (results) =>
     @$testEndpointBtn.removeClass 'ing'
     if !results.error
+      @endpointValidated = true
       @clearError()
       @chosenProvider = results.provider
       @$next.removeClass 'disabled'
@@ -50,29 +79,37 @@ module.exports = class Provider extends Step
   # ------------------------------------ Helpers
 
   resetCustomUi : () ->
+    @endpointValidated = false
     @$next.addClass 'disabled'
     $("#test-endpoint").removeClass 'verified disabled'
 
   getEndpoint : () => @endpoint
 
-  getProviders : () ->
-    [
-      {name:"Digital Ocean", icon:"digital-ocean", id:"do"}
-      {name:"Google Compute", icon:"google-compute", id:"google", coming:true}
-      {name:"Amazon", icon:"aws", id:"aws", coming:true}
-      {name:"Joyent", icon:"joyent", id:"joyent", coming:true}
-      {name:"Joyent", icon:"joyent", id:"joyent", coming:true}
-      {name:"Joyent", icon:"joyent", id:"joyent", coming:true}
-      # {name:"Linode", icon:"linode", id:"linode", coming:true}
-    ]
-
-  # TODO: Decide how much validation we want to do..
   validateField : (str)-> str.length > 0
 
   addEventListeners : () ->
     # Next
     @$next = $('#next', @$node)
     @$next.on 'click', @nextStepCb
+
+    # Official providers selector
+    @$officialProvider = $('.official-provider', @$node)
+    @$officialProvider.on 'click', (e)=>
+      return if e.target.tagName == 'INPUT'
+      @$officialProvider.removeClass 'active'
+      $(e.currentTarget).addClass 'active'
+      $('input', $(e.currentTarget)).trigger 'click'
+    $('input', @$officialProvider).on 'click', (e)=> @changeOfficialProvider e.currentTarget.value
+    $(@$officialProvider[0]).trigger 'click'
+
+    # Existing custom providers selector
+    @$customProvider = $('.custom-provider', @$node)
+    @$customProvider.on 'click', (e)=>
+      return if e.target.tagName == 'INPUT'
+      @$customProvider.removeClass 'active'
+      $(e.currentTarget).addClass 'active'
+      $('input', $(e.currentTarget)).trigger 'click'
+    $('input', @$customProvider).on 'click', (e)=> @changeCustomProvider e.currentTarget.value
 
     # Provider kind (custom / official)
     $kind = $('.kind',  @$node)
@@ -81,16 +118,6 @@ module.exports = class Provider extends Step
       $('input', $(e.currentTarget)).trigger 'click'
     $('input', $kind).on 'click', (e)=> @changeProviderKind e.currentTarget.value
     $($kind[0]).trigger 'click'
-
-    # Official providers selector
-    $provider = $('.provider', @$node)
-    $provider.on 'click', (e)->
-      return if e.target.tagName == 'INPUT'
-      $provider.removeClass 'active'
-      $(e.currentTarget).addClass 'active'
-      $('input', $(e.currentTarget)).trigger 'click'
-    $('input', $provider).on 'click', (e)=> @changeOfficialProvider e.currentTarget.value
-    $($provider[0]).trigger 'click'
 
     # Custom endpoint
     $endpointField = $("#endpoint-url")

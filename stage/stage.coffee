@@ -106,6 +106,6 @@ providerConfig =
   endpointTester    : endpointTester
   verifyAccount     : verifyAccount
   addProviderCb     : addProvider
-  hasAccounts       : false
+  hasAccounts       : true
 
 app.addProvider providerConfig

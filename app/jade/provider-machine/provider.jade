@@ -1,3 +1,10 @@
+mixin provider(id, name, icon, group)
+  .provider(id="#{id}" class="#{group}")
+    .icon
+      img.shadow-icon(data-src="#{icon}" scalable='true')
+    .txt= name
+    input.lexi(type='radio' name='#{group}' value="#{id}")
+    
 .launch-step.provider-kind
   .provider-kinds
     .kind
@@ -10,15 +17,18 @@
       .txt Proceed
   
   .providers
-    .official
+    .official.provider-parent
       each provider in officialProviders
-        .provider(id="#{provider.id}")
-          .icon
-            img.shadow-icon(data-src="#{provider.icon}" scalable='true')
-          .txt= provider.name
-          input.lexi(type='radio' name='provider' value="#{provider.id}")
+        +provider(provider.id, provider.name, provider.icon, 'official-provider')
+    
     .custom
-      .endpoint
+      if customProviders.length > 0
+        .provider-parent
+          each provider in customProviders
+            +provider(provider.id, provider.name, provider.icon, 'custom-provider')
+          +provider('new-custom', 'New Custom Provider', 'new-custom', 'custom-provider')
+
+      .endpoint(class=customProviders.length > 0 ? "hidden" : "")
         .endpoint-row
           .txt Provider Endpoint :
           input#endpoint-url

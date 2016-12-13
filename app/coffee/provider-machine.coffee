@@ -22,7 +22,7 @@ module.exports = class ProviderMachine
 
   createSteps : () ->
     $holder         = @stepManager.build()
-    @provider       = new Provider $holder, @stepManager.nextStep, @config.officialProviders, @config.endpointTester
+    @provider       = new Provider $holder, @stepManager.nextStep, @config.officialProviders, @config.customProviders, @config.endpointTester
     @authentication = new Authentication $holder, @stepManager.nextStep, @provider.getProvider, @provider.getEndpoint, @config.verifyAccount
     @finalize       = new Finalize $holder, @provider.getProvider, @submitData
     steps = [@provider, @authentication, @finalize]

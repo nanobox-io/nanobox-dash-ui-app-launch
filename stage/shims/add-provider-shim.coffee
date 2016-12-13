@@ -2,6 +2,10 @@ module.exports = class AddProviderShim
 
   constructor: () ->
   getCustomProviders : ()->
+    [
+      @getUnofficialProvider("Custom Provider")
+    ]
+
   getOfficialProviders : ()->
     [
       {
@@ -71,11 +75,11 @@ module.exports = class AddProviderShim
       }
     ]
 
-  getUnofficialProvider : () ->
+  getUnofficialProvider : (name="Ted's Hosting") ->
     {
-      name:"Ted's Hosting"
-      # icon:'digital-ocean'
-      # id:'do'
+      name:name
+      icon:'custom'
+      id:'do'
       authFields:[
         {label:'User Name', key:'user_name'}
         {label:'Password', key:'pass'}

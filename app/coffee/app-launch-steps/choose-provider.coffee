@@ -37,7 +37,7 @@ module.exports = class ChooseProvider extends Step
     $node.on 'change', (e)=> @onProviderChange e.currentTarget.value
     $node.trigger 'change'
     $("#provider", @$node).append $node
-    lexify $("#provider", @$node)
+    lexify()# $("#provider", @$node)
 
   onProviderChange : (@currentProviderId) =>
     for provider in @providers
@@ -49,7 +49,7 @@ module.exports = class ChooseProvider extends Step
           $node.on 'change', (e)=> @onRegionChange e.currentTarget.value
           $node.trigger 'change'
           $("#region", @$node).empty().append $node
-          lexify $("#region", @$node)
+          lexify()# $("#region", @$node)
           $iconHolder = $(".provider-icon", @$node)
           $iconHolder.empty()
           $iconHolder.append $("<img data-src='#{provider.meta.icon}' class='shadow-icon' />")

@@ -7,7 +7,7 @@ module.exports = class Provider extends Step
     @$node = $ provider( {officialProviders:@officialProviders, customProviders:@customProviders} )
     $el.append @$node
     castShadows @$node
-    lexify @$node
+    lexify()# @$node
     @addEventListeners()
 
   # ------------------------------------ API

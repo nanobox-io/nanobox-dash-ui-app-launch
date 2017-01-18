@@ -5,7 +5,7 @@ mixin provider(id, name, icon, group)
     .txt= name
     input.lexi(type='radio' name='#{group}' value="#{id}")
     
-.launch-step.provider-kind
+.step.provider-kind
   .provider-kinds
     .kind
       input.lexi(type='radio' name='provider-kind' value="official" checked="checked")

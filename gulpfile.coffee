@@ -109,7 +109,7 @@ compileFiles = (doWatch=false, cb) ->
     {meth:html,       glob:jadePath}
     {meth:parseSVG,   glob:svgPath}
     {meth:jsStage,    glob:stageJsPath}
-    {meth:cssStage,   glob:cssStagePath}
+    {meth:cssStage,   glob:[cssStagePath,'lib/assets/core-styles/scss/**/*.scss']}
     {meth:htmlStage,  glob:jadeStagePath}
     {meth:copyAssets, glob:assetPath, params:['./server/assets/', onComplete]}
   ]

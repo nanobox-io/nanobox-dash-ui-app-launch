@@ -1,34 +1,7 @@
-.step-title-bar  { display: flex; align-items: center; border-bottom: solid 1px #BFBFBF; padding:8px 0;
-  .step-count    { color: #3F5F6B; font-style: italic; font-size:16px;
-                   // CHROME TEMP FIX, REMOVE >>
-                   display:table;
-                   // <<
-  }
-  .step-title    { margin-left: 15px; text-transform: uppercase; font-weight: $bold; font-size: 14px; color: #3F5F6B;}
-  .ui-btn        { cursor: pointer;  font-style:italic; color:#A4A4A4; display:flex; align-items: center;
-    .txt         { margin-left:8px; }
-    &.cancel     { display:flex; }
-    &.back       { margin-left: auto; margin-right:40px; }
-  }
-}
-
 .step-manager      {
-  .step-wrapper    { position: relative;
-    $easing : cubic-bezier(0.840, 0.005, 0.000, 1.000);
-
-    .steps         {position: absolute; display: flex; @include transition(all, 350ms, $easing);
-      .launch-step {flex-shrink: 0; opacity:0; @include transition(opacity, 450ms, $easing); position: relative;
-        table          {margin:40px 0 0;
-          tr           {}
-          td           {vertical-align: middle; padding-bottom: 20px; white-space:nowrap;
-            &.label    {@include label;padding-right:10px;
-              &:after  {content:" : "}
-            }
-            &:last-of-type   {width: 100%;
-              input    { width:100%; }
-            }
-          }
-        }
+  .step-wrapper    {
+    .steps         {
+      .step {
         @import 'step-error';
         @import 'app-launch/name-app';
         @import 'app-launch/choose-provider';
@@ -36,13 +9,7 @@
         @import 'provider-machine/provider';
         @import 'provider-machine/authentication';
         @import 'provider-machine/finalize';
-        &.active   { opacity:1; }
       }
     }
   }
-}
-
-&.first            {
-  .ui-btn.cancel   { margin-left:auto; }
-  .ui-btn.back     { display: none !important; }
 }

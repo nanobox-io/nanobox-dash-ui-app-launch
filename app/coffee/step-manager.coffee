@@ -19,7 +19,7 @@ module.exports = class StepManager
     return $('.steps', @$node)
 
   addSteps : (steps) ->
-    @$allSteps    = $ ".launch-step", @$node
+    @$allSteps    = $ ".step", @$node
     @steps = new Sequin( steps )
     @$allSteps.css width: @$el.width()
     @slideToCurrentStep()
@@ -32,7 +32,7 @@ module.exports = class StepManager
     @$currentStep.text @steps.currentItemIndex+1
     @$stepTitle.text @currentStep.getTitle()
 
-    $( ".launch-step", @$node).removeClass 'active'
+    $( ".step", @$node).removeClass 'active'
     @currentStep.$node.addClass 'active'
     left = - @steps.currentItem().$node.position().left
 

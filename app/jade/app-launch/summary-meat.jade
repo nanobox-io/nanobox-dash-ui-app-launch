@@ -22,18 +22,18 @@ div
             .spec(class="#{klass}")
               .metric #{spec.metric}
               .val #{spec.val}
-      .cost 5
+      .cost= Math.round(meta.dollarsPerMo)
         
     .info-box.nanobox
       .title
         .icon-wrapper
           img.shadow-icon(data-src="mini-nano-stack" scalable="true")
         .txt Nanobox
-      .blurb Using nanobox is completely free for hobby projects and small sites. If you need to scale up, switch to a production plan at any time.
+      .blurb Your app is free for 10 days, you will then need to choose a <a href="//nanobox.io/pricing">plan</a> that fits your needs.<br/><br/>Note, nanobox will remain free for opensource &amp; personal projects
       .cost 0
         
     .arrow-button.no-arrow.lifecycle#submit
-      .txt Submit
+      .txt Start 10 Day Trial
 
   .whats-next.cloaked
     .down-arrow

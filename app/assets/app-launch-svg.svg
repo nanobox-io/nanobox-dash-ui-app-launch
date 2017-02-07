@@ -3,117 +3,106 @@
 <svg version="1.1" id="svgs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#95A1A8;}
-	.st1{fill:#0072C3;}
-	.st2{fill:#FFFFFF;}
-	.st3{fill:#19B3FF;}
-	.st4{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
-	.st5{fill:none;stroke:#FFFFFF;stroke-width:1.0653;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#82979F;stroke-miterlimit:10;}
-	.st7{fill:#ACB8C4;}
-	.st8{fill:#D5DDE6;}
-	.st9{fill:#DBE3EB;}
-	.st10{clip-path:url(#SVGID_2_);}
-	.st11{opacity:0.39;fill:url(#SVGID_3_);enable-background:new    ;}
-	.st12{opacity:0.39;fill:url(#SVGID_4_);enable-background:new    ;}
-	.st13{opacity:0.39;fill:url(#SVGID_5_);enable-background:new    ;}
-	.st14{opacity:0.72;fill:url(#SVGID_6_);enable-background:new    ;}
-	.st15{opacity:0.13;fill:url(#SVGID_7_);enable-background:new    ;}
-	.st16{fill:#637787;}
-	.st17{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;}
-	.st18{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.5002,3.0001;}
-	.st19{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.4505,2.9859;}
-	.st20{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.5126,3.0036;}
-	.st21{fill:#E2EAF3;}
-	.st22{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:14,4;}
-	.st23{fill:none;stroke:#FFFFFF;stroke-width:2.6779;stroke-miterlimit:10;}
-	.st24{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;}
-	.st25{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5109,10.8515;}
-	.st26{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5102,10.8504;}
-	.st27{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5101,10.8501;}
-	.st28{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5107,10.8512;}
-	.st29{fill:none;stroke:#43C4A6;stroke-width:2.3066;stroke-miterlimit:10;}
-	.st30{fill:#F3F7FA;}
-	.st31{fill:#1EB8FF;}
-	.st32{fill:none;}
-	.st33{fill:#00ADFE;}
+	.st0{fill:#0072C3;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#19B3FF;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-width:1.0653;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#82979F;stroke-miterlimit:10;}
+	.st6{fill:#ACB8C4;}
+	.st7{fill:#D5DDE6;}
+	.st8{fill:#DBE3EB;}
+	.st9{clip-path:url(#SVGID_2_);}
+	.st10{opacity:0.39;fill:url(#SVGID_3_);enable-background:new    ;}
+	.st11{opacity:0.39;fill:url(#SVGID_4_);enable-background:new    ;}
+	.st12{opacity:0.39;fill:url(#SVGID_5_);enable-background:new    ;}
+	.st13{opacity:0.72;fill:url(#SVGID_6_);enable-background:new    ;}
+	.st14{opacity:0.13;fill:url(#SVGID_7_);enable-background:new    ;}
+	.st15{fill:#637787;}
+	.st16{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.5002,3.0001;}
+	.st18{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.4505,2.9859;}
+	.st19{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:10.5126,3.0036;}
+	.st20{fill:#E2EAF3;}
+	.st21{fill:none;stroke:#E0E8F1;stroke-width:1.5826;stroke-miterlimit:10;stroke-dasharray:14,4;}
+	.st22{fill:none;stroke:#FFFFFF;stroke-width:2.6779;stroke-miterlimit:10;}
+	.st23{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;}
+	.st24{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5109,10.8515;}
+	.st25{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5102,10.8504;}
+	.st26{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5101,10.8501;}
+	.st27{fill:none;stroke:#1EB8FF;stroke-width:3;stroke-linecap:square;stroke-linejoin:bevel;stroke-dasharray:6.5107,10.8512;}
+	.st28{fill:none;stroke:#43C4A6;stroke-width:2.3066;stroke-miterlimit:10;}
+	.st29{fill:#F3F7FA;}
+	.st30{fill:#1EB8FF;}
+	.st31{fill:none;}
+	.st32{fill:#00ADFE;}
 </style>
-<g id="cancel-x-btn">
-	<path class="st0" d="M21.2,17.2c0.2,0.2,0.2,0.4,0.2,0.6s-0.1,0.4-0.2,0.6c-0.2,0.2-0.4,0.2-0.6,0.2s-0.4-0.1-0.6-0.2l-5.8-5.8
-		l-5.8,5.8c-0.2,0.2-0.4,0.2-0.6,0.2c-0.1,0-0.3,0-0.3-0.1c-0.1,0-0.2-0.1-0.3-0.2C7,18.2,6.9,18,6.9,17.7c0-0.2,0.1-0.4,0.2-0.6
-		l5.8-5.8L7.2,5.6C7.1,5.5,7.1,5.4,7,5.3C7,5.2,6.9,5.1,6.9,5S7,4.7,7,4.6s0.1-0.2,0.2-0.3c0.2-0.2,0.4-0.2,0.6-0.2s0.4,0.1,0.6,0.2
-		l5.8,5.8L20,4.3c0.2-0.2,0.4-0.2,0.6-0.2s0.4,0.1,0.6,0.2c0.1,0.1,0.1,0.2,0.2,0.3c0,0.1,0.1,0.2,0.1,0.3s0,0.2-0.1,0.3
-		c0,0.1-0.1,0.2-0.2,0.3l-5.8,5.8L21.2,17.2z"/>
-</g>
-<g id="back-x-btn">
-	<path class="st0" d="M38.2,11.4l7-7c0.2-0.2,0.4-0.2,0.6-0.2s0.4,0.1,0.6,0.2c0.1,0.1,0.1,0.2,0.2,0.3c0,0.1,0.1,0.2,0.1,0.3
-		s0,0.2-0.1,0.3c0,0.1-0.1,0.2-0.2,0.3l-5.8,5.8l5.8,5.8c0.2,0.2,0.2,0.4,0.2,0.6s-0.1,0.4-0.2,0.6c-0.2,0.2-0.4,0.2-0.6,0.2
-		c-0.2,0-0.4-0.1-0.6-0.2L38.2,11.4z"/>
-</g>
 <g id="next-arrow-btn">
-	<polygon class="st1" points="140.9,11.9 59.6,11.9 59.6,51.5 140.9,51.5 153.1,31.7 	"/>
+	<polygon class="st0" points="140.9,11.9 59.6,11.9 59.6,51.5 140.9,51.5 153.1,31.7 	"/>
 </g>
 <g id="create-hex">
-	<polygon class="st2" points="575.6,125 493.2,172.6 410.8,125 410.8,29.8 493.2,-17.7 575.6,29.8 	"/>
+	<polygon class="st1" points="575.6,125 493.2,172.6 410.8,125 410.8,29.8 493.2,-17.7 575.6,29.8 	"/>
 </g>
 <g id="dropdown-check">
-	<path class="st3" d="M14.6,43.1l-2.8-2.8c-0.5-0.6-0.5-1.5,0-2c0.6-0.6,1.5-0.6,2,0l1.8,1.8l4.4-4.4c0.5-0.6,1.5-0.6,2,0
+	<path class="st2" d="M14.6,43.1l-2.8-2.8c-0.5-0.6-0.5-1.5,0-2c0.6-0.6,1.5-0.6,2,0l1.8,1.8l4.4-4.4c0.5-0.6,1.5-0.6,2,0
 		c0.5,0.5,0.5,1.5,0,2l-5.4,5.4c-0.3,0.3-0.6,0.4-1,0.4S14.9,43.4,14.6,43.1z"/>
 </g>
 <g id="whats-next">
-	<line class="st4" x1="584.9" y1="298.4" x2="584.9" y2="444.8"/>
-	<polyline class="st4" points="535.7,395.6 584.9,444.8 634,395.6 	"/>
-	<rect x="410.8" y="241.9" class="st5" width="348.1" height="56.6"/>
+	<line class="st3" x1="584.9" y1="298.4" x2="584.9" y2="444.8"/>
+	<polyline class="st3" points="535.7,395.6 584.9,444.8 634,395.6 	"/>
+	<rect x="410.8" y="241.9" class="st4" width="348.1" height="56.6"/>
 </g>
 <g id="next-process">
-	<polyline class="st6" points="1024.3,47.9 986.3,85.9 954.9,85.9 	"/>
-	<polyline class="st6" points="1046.1,163.4 1084.1,125.4 1115.5,125.4 	"/>
-	<polyline class="st6" points="1024.3,317.9 986.3,355.9 954.9,355.9 	"/>
-	<polyline class="st6" points="1046.1,433.4 1084.1,395.4 1115.5,395.4 	"/>
-	<circle class="st7" cx="1188.6" cy="395.5" r="73.1"/>
+	<polyline class="st5" points="1024.3,47.9 986.3,85.9 954.9,85.9 	"/>
+	<polyline class="st5" points="1046.1,163.4 1084.1,125.4 1115.5,125.4 	"/>
+	<polyline class="st5" points="1024.3,317.9 986.3,355.9 954.9,355.9 	"/>
+	<polyline class="st5" points="1046.1,433.4 1084.1,395.4 1115.5,395.4 	"/>
+	<circle class="st6" cx="1188.6" cy="395.5" r="73.1"/>
 	<g>
-		<polygon class="st8" points="1240.1,391.7 1226.8,399.4 1213.4,391.7 1213.4,376.3 1226.8,368.6 1240.1,376.3 		"/>
-		<polygon class="st2" points="1213.4,376.3 1226.8,384 1240.1,376.3 1226.8,368.6 		"/>
-		<polygon class="st9" points="1226.8,384 1226.8,399.4 1213.4,391.7 1213.4,376.3 		"/>
+		<polygon class="st7" points="1240.1,391.7 1226.8,399.4 1213.4,391.7 1213.4,376.3 1226.8,368.6 1240.1,376.3 		"/>
+		<polygon class="st1" points="1213.4,376.3 1226.8,384 1240.1,376.3 1226.8,368.6 		"/>
+		<polygon class="st8" points="1226.8,384 1226.8,399.4 1213.4,391.7 1213.4,376.3 		"/>
 	</g>
 	<g>
-		<polygon class="st8" points="1219.6,403.2 1189.9,420.3 1160.2,403.2 1160.2,368.8 1189.9,351.7 1219.6,368.8 		"/>
-		<polygon class="st2" points="1160.2,368.8 1189.9,386 1219.6,368.8 1189.9,351.7 		"/>
-		<polygon class="st9" points="1189.9,386 1189.9,420.3 1160.2,403.2 1160.2,368.8 		"/>
+		<polygon class="st7" points="1219.6,403.2 1189.9,420.3 1160.2,403.2 1160.2,368.8 1189.9,351.7 1219.6,368.8 		"/>
+		<polygon class="st1" points="1160.2,368.8 1189.9,386 1219.6,368.8 1189.9,351.7 		"/>
+		<polygon class="st8" points="1189.9,386 1189.9,420.3 1160.2,403.2 1160.2,368.8 		"/>
 	</g>
 	<g>
-		<polygon class="st8" points="1163.8,413.3 1150.5,421 1137.1,413.3 1137.1,397.8 1150.5,390.1 1163.8,397.8 		"/>
-		<polygon class="st2" points="1137.1,397.8 1150.5,405.5 1163.8,397.8 1150.5,390.1 		"/>
-		<polygon class="st9" points="1150.5,405.5 1150.5,421 1137.1,413.3 1137.1,397.8 		"/>
+		<polygon class="st7" points="1163.8,413.3 1150.5,421 1137.1,413.3 1137.1,397.8 1150.5,390.1 1163.8,397.8 		"/>
+		<polygon class="st1" points="1137.1,397.8 1150.5,405.5 1163.8,397.8 1150.5,390.1 		"/>
+		<polygon class="st8" points="1150.5,405.5 1150.5,421 1137.1,413.3 1137.1,397.8 		"/>
 	</g>
 	<g>
-		<polygon class="st8" points="1183.1,424.2 1169.8,431.9 1156.4,424.2 1156.4,408.8 1169.8,401.1 1183.1,408.8 		"/>
-		<polygon class="st2" points="1156.4,408.8 1169.8,416.5 1183.1,408.8 1169.8,401.1 		"/>
-		<polygon class="st9" points="1169.8,416.5 1169.8,431.9 1156.4,424.2 1156.4,408.8 		"/>
+		<polygon class="st7" points="1183.1,424.2 1169.8,431.9 1156.4,424.2 1156.4,408.8 1169.8,401.1 1183.1,408.8 		"/>
+		<polygon class="st1" points="1156.4,408.8 1169.8,416.5 1183.1,408.8 1169.8,401.1 		"/>
+		<polygon class="st8" points="1169.8,416.5 1169.8,431.9 1156.4,424.2 1156.4,408.8 		"/>
 	</g>
-	<circle class="st7" cx="881.8" cy="355.9" r="73.1"/>
-	<polygon class="st8" points="916.8,383.1 881.8,403.3 846.8,383.1 846.8,342.6 881.8,322.4 916.8,342.6 	"/>
-	<polygon class="st2" points="846.8,342.6 881.8,362.8 916.8,342.6 881.8,322.4 	"/>
-	<polygon class="st9" points="881.8,362.8 881.8,403.3 846.8,383.1 846.8,342.6 	"/>
+	<circle class="st6" cx="881.8" cy="355.9" r="73.1"/>
+	<polygon class="st7" points="916.8,383.1 881.8,403.3 846.8,383.1 846.8,342.6 881.8,322.4 916.8,342.6 	"/>
+	<polygon class="st1" points="846.8,342.6 881.8,362.8 916.8,342.6 881.8,322.4 	"/>
+	<polygon class="st8" points="881.8,362.8 881.8,403.3 846.8,383.1 846.8,342.6 	"/>
 	<g>
-		<polygon class="st8" points="854.1,342.6 881.8,358.6 881.8,326.6 		"/>
-		<polygon class="st9" points="881.8,326.6 881.8,358.6 909.5,342.6 		"/>
+		<polygon class="st7" points="854.1,342.6 881.8,358.6 881.8,326.6 		"/>
+		<polygon class="st8" points="881.8,326.6 881.8,358.6 909.5,342.6 		"/>
 	</g>
 	<g>
 		<g>
 			<g>
 				<g>
 					<g>
-						<defs>
-							<polygon id="SVGID_1_" points="854.1,342.6 881.8,358.6 909.5,342.6 909.5,287.4 854.1,287.4 							"/>
-						</defs>
-						<clipPath id="SVGID_2_">
-							<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-						</clipPath>
-						<g class="st10">
-							<polygon class="st2" points="901.9,332.1 881.8,343.7 861.7,332.1 861.7,308.9 881.8,297.3 901.9,308.9 							"/>
-							<polygon class="st2" points="861.7,308.9 881.8,320.5 901.9,308.9 881.8,297.3 							"/>
-							<polygon class="st2" points="881.8,320.5 881.8,343.7 861.7,332.1 861.7,308.9 							"/>
+						<g>
+							<defs>
+								<polygon id="SVGID_1_" points="854.1,342.6 881.8,358.6 909.5,342.6 909.5,287.4 854.1,287.4 								"/>
+							</defs>
+							<clipPath id="SVGID_2_">
+								<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+							</clipPath>
+							<g class="st9">
+								<polygon class="st1" points="901.9,332.1 881.8,343.7 861.7,332.1 861.7,308.9 881.8,297.3 901.9,308.9 								"/>
+								<polygon class="st1" points="861.7,308.9 881.8,320.5 901.9,308.9 881.8,297.3 								"/>
+								<polygon class="st1" points="881.8,320.5 881.8,343.7 861.7,332.1 861.7,308.9 								"/>
+							</g>
 						</g>
 					</g>
 				</g>
@@ -121,146 +110,146 @@
 		</g>
 	</g>
 	
-		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="899.75" y1="317.9706" x2="899.75" y2="268.249" gradientTransform="matrix(1 0 0 1 0 2)">
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="899.75" y1="-117.9706" x2="899.75" y2="-68.249" gradientTransform="matrix(1 0 0 -1 0 202)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
 	</linearGradient>
-	<polygon class="st11" points="902.4,241.5 897.1,244.6 897.1,329.7 902.4,326.6 	"/>
+	<polygon class="st10" points="902.4,241.5 897.1,244.6 897.1,329.7 902.4,326.6 	"/>
 	
-		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="875.1" y1="319.0359" x2="875.1" y2="269.3144" gradientTransform="matrix(1 0 0 1 0 2)">
+		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="875.1" y1="-119.0359" x2="875.1" y2="-69.3144" gradientTransform="matrix(1 0 0 -1 0 202)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
 	</linearGradient>
-	<polygon class="st12" points="877.8,242.6 872.4,245.7 872.4,330.8 877.8,327.7 	"/>
+	<polygon class="st11" points="877.8,242.6 872.4,245.7 872.4,330.8 877.8,327.7 	"/>
 	
-		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="870.45" y1="314.7055" x2="870.45" y2="262.2587" gradientTransform="matrix(1 0 0 1 0 2)">
+		<linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="870.45" y1="-114.7055" x2="870.45" y2="-62.2587" gradientTransform="matrix(1 0 0 -1 0 202)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
 	</linearGradient>
-	<polygon class="st13" points="876.6,234 864.3,241.9 864.3,327 876.6,319.1 	"/>
+	<polygon class="st12" points="876.6,234 864.3,241.9 864.3,327 876.6,319.1 	"/>
 	
-		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="864.3" y1="300.974" x2="864.3" y2="250.6974" gradientTransform="matrix(1 0 0 1 0 2)">
+		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="864.3" y1="-100.974" x2="864.3" y2="-50.6974" gradientTransform="matrix(1 0 0 -1 0 202)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
 	</linearGradient>
-	<polygon class="st14" points="867,248.3 861.6,251.4 861.6,309.8 867,306.7 	"/>
+	<polygon class="st13" points="867,248.3 861.6,251.4 861.6,309.8 867,306.7 	"/>
 	
-		<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="-3059.9749" y1="319.2121" x2="-3059.9749" y2="270.2812" gradientTransform="matrix(-1 0 0 1 -2167.5249 2)">
+		<linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="-3059.9749" y1="-119.2121" x2="-3059.9749" y2="-70.2812" gradientTransform="matrix(-1 0 0 -1 -2167.5249 202)">
 		<stop  offset="0" style="stop-color:#FFFFFF"/>
 		<stop  offset="1" style="stop-color:#FFFFFF;stop-opacity:0"/>
 	</linearGradient>
-	<polygon class="st15" points="887.8,244 897.1,247.8 897.1,330.8 887.8,327 	"/>
-	<circle class="st16" cx="1035.2" cy="445.8" r="18.5"/>
-	<circle class="st16" cx="1035.2" cy="311.3" r="18.5"/>
-	<circle class="st16" cx="1035.2" cy="176.8" r="18.5"/>
-	<circle class="st16" cx="1035.2" cy="42.4" r="18.5"/>
-	<path class="st2" d="M1034.8,39.1l-2.2,2.3l-1.6-1.7l4.2-4.2h2.5v13.3h-2.8L1034.8,39.1L1034.8,39.1z"/>
-	<path class="st2" d="M1029.7,181c5.5-4,7.1-5.4,7.1-7c0-1.2-1.1-1.7-2.2-1.7c-1.5,0-2.7,0.6-3.6,1.5l-1.6-1.9
+	<polygon class="st14" points="887.8,244 897.1,247.8 897.1,330.8 887.8,327 	"/>
+	<circle class="st15" cx="1035.2" cy="445.8" r="18.5"/>
+	<circle class="st15" cx="1035.2" cy="311.3" r="18.5"/>
+	<circle class="st15" cx="1035.2" cy="176.8" r="18.5"/>
+	<circle class="st15" cx="1035.2" cy="42.4" r="18.5"/>
+	<path class="st1" d="M1034.8,39.1l-2.2,2.3l-1.6-1.7l4.2-4.2h2.5v13.3h-2.8L1034.8,39.1L1034.8,39.1z"/>
+	<path class="st1" d="M1029.7,181c5.5-4,7.1-5.4,7.1-7c0-1.2-1.1-1.7-2.2-1.7c-1.5,0-2.7,0.6-3.6,1.5l-1.6-1.9
 		c1.3-1.5,3.3-2.2,5.1-2.2c2.8,0,5.1,1.6,5.1,4.3c0,2.3-1.9,4.3-5.5,6.8h5.6v2.5h-10V181z"/>
-	<path class="st2" d="M1030.9,314.7c0.9,1,2.4,1.5,3.7,1.5c1.6,0,2.5-0.7,2.5-1.7c0-1.1-0.8-1.6-2.7-1.6c-0.6,0-1.5,0-1.7,0v-2.5
+	<path class="st1" d="M1030.9,314.7c0.9,1,2.4,1.5,3.7,1.5c1.6,0,2.5-0.7,2.5-1.7c0-1.1-0.8-1.6-2.7-1.6c-0.6,0-1.5,0-1.7,0v-2.5
 		c0.2,0,1.2,0,1.7,0c1.5,0,2.5-0.5,2.5-1.5c0-1.1-1.1-1.6-2.5-1.6c-1.3,0-2.5,0.5-3.4,1.4l-1.4-1.8c1.1-1.2,2.8-2.1,5.1-2.1
 		c3.1,0,5,1.4,5,3.6c0,1.7-1.4,2.8-2.9,3c1.4,0.1,3.1,1.2,3.1,3.2c0,2.3-2.1,3.9-5.3,3.9c-2.5,0-4.3-0.9-5.3-2.1L1030.9,314.7z"/>
-	<path class="st2" d="M1035.8,450.6h-6.4v-2.2l5.3-8.3h3.9v8.1h1.7v2.5h-1.7v2.8h-2.8V450.6L1035.8,450.6z M1032.2,448.1h3.6v-5.6
+	<path class="st1" d="M1035.8,450.6h-6.4v-2.2l5.3-8.3h3.9v8.1h1.7v2.5h-1.7v2.8h-2.8V450.6L1035.8,450.6z M1032.2,448.1h3.6v-5.6
 		L1032.2,448.1z"/>
-	<circle class="st7" cx="1188.6" cy="125.5" r="73.1"/>
+	<circle class="st6" cx="1188.6" cy="125.5" r="73.1"/>
 	<g id="hex-platform_1_">
 		<g id="_x3E_bg_1_">
 			<g>
-				<polyline class="st17" points="1227.9,140.4 1227.9,147.4 1221.8,150.9 				"/>
-				<line class="st18" x1="1219.2" y1="152.4" x2="1197.1" y2="165.1"/>
-				<polyline class="st17" points="1195.8,165.8 1189.8,169.3 1183.7,165.8 				"/>
-				<line class="st19" x1="1181.1" y1="164.3" x2="1159.1" y2="151.6"/>
-				<polyline class="st17" points="1157.8,150.9 1151.8,147.4 1151.8,140.4 				"/>
-				<line class="st20" x1="1151.8" y1="137.4" x2="1151.8" y2="111.9"/>
-				<polyline class="st17" points="1151.8,110.4 1151.8,103.4 1157.8,99.9 				"/>
-				<line class="st19" x1="1160.4" y1="98.4" x2="1182.4" y2="85.7"/>
-				<polyline class="st17" points="1183.7,84.9 1189.8,81.4 1195.8,84.9 				"/>
-				<line class="st18" x1="1198.4" y1="86.4" x2="1220.5" y2="99.1"/>
-				<polyline class="st17" points="1221.8,99.9 1227.9,103.4 1227.9,110.4 				"/>
-				<line class="st20" x1="1227.9" y1="113.4" x2="1227.9" y2="138.9"/>
+				<polyline class="st16" points="1227.9,140.4 1227.9,147.4 1221.8,150.9 				"/>
+				<line class="st17" x1="1219.2" y1="152.4" x2="1197.1" y2="165.1"/>
+				<polyline class="st16" points="1195.8,165.8 1189.8,169.3 1183.7,165.8 				"/>
+				<line class="st18" x1="1181.1" y1="164.3" x2="1159.1" y2="151.6"/>
+				<polyline class="st16" points="1157.8,150.9 1151.8,147.4 1151.8,140.4 				"/>
+				<line class="st19" x1="1151.8" y1="137.4" x2="1151.8" y2="111.9"/>
+				<polyline class="st16" points="1151.8,110.4 1151.8,103.4 1157.8,99.9 				"/>
+				<line class="st18" x1="1160.4" y1="98.4" x2="1182.4" y2="85.7"/>
+				<polyline class="st16" points="1183.7,84.9 1189.8,81.4 1195.8,84.9 				"/>
+				<line class="st17" x1="1198.4" y1="86.4" x2="1220.5" y2="99.1"/>
+				<polyline class="st16" points="1221.8,99.9 1227.9,103.4 1227.9,110.4 				"/>
+				<line class="st19" x1="1227.9" y1="113.4" x2="1227.9" y2="138.9"/>
 			</g>
 		</g>
 		<g id="logo-horizontal_1_">
 			<g>
-				<polygon class="st2" points="1208.4,145.3 1189.6,154.9 1170.3,145.1 1189.1,135.3 				"/>
-				<polygon class="st21" points="1200.4,141.2 1189.3,146.9 1178,141 1189.1,135.3 				"/>
-				<polygon class="st8" points="1189.6,154.9 1208.4,145.3 1208.4,148.1 1189.6,157.7 				"/>
-				<polygon class="st9" points="1189.6,154.9 1170.3,145.1 1170.3,147.9 1189.6,157.7 				"/>
+				<polygon class="st1" points="1208.4,145.3 1189.6,154.9 1170.3,145.1 1189.1,135.3 				"/>
+				<polygon class="st20" points="1200.4,141.2 1189.3,146.9 1178,141 1189.1,135.3 				"/>
+				<polygon class="st7" points="1189.6,154.9 1208.4,145.3 1208.4,148.1 1189.6,157.7 				"/>
+				<polygon class="st8" points="1189.6,154.9 1170.3,145.1 1170.3,147.9 1189.6,157.7 				"/>
 			</g>
 			<g>
-				<polygon class="st8" points="1189.8,139.2 1205.1,131.4 1205.1,133.6 1189.8,141.5 				"/>
-				<polygon class="st9" points="1189.8,139.2 1174.4,131.4 1174.4,133.6 1189.8,141.5 				"/>
-				<polygon class="st2" points="1205.1,131.4 1189.8,139.2 1174.4,131.4 1189.8,123.5 				"/>
-				<polygon class="st21" points="1201.1,129.2 1189.8,135.1 1178.5,129.2 1189.8,123.5 				"/>
+				<polygon class="st7" points="1189.8,139.2 1205.1,131.4 1205.1,133.6 1189.8,141.5 				"/>
+				<polygon class="st8" points="1189.8,139.2 1174.4,131.4 1174.4,133.6 1189.8,141.5 				"/>
+				<polygon class="st1" points="1205.1,131.4 1189.8,139.2 1174.4,131.4 1189.8,123.5 				"/>
+				<polygon class="st20" points="1201.1,129.2 1189.8,135.1 1178.5,129.2 1189.8,123.5 				"/>
 			</g>
 			<g>
-				<polygon class="st8" points="1189.8,126.9 1208.4,117.3 1208.4,120.2 1189.8,129.7 				"/>
-				<polygon class="st9" points="1189.8,126.9 1171.1,117.3 1171.1,120.2 1189.8,129.7 				"/>
-				<polygon class="st2" points="1208.4,117.3 1189.8,126.9 1171.1,117.3 1189.8,107.8 				"/>
-				<polygon class="st21" points="1203.5,114.8 1189.8,121.9 1176,114.8 1189.8,107.8 				"/>
+				<polygon class="st7" points="1189.8,126.9 1208.4,117.3 1208.4,120.2 1189.8,129.7 				"/>
+				<polygon class="st8" points="1189.8,126.9 1171.1,117.3 1171.1,120.2 1189.8,129.7 				"/>
+				<polygon class="st1" points="1208.4,117.3 1189.8,126.9 1171.1,117.3 1189.8,107.8 				"/>
+				<polygon class="st20" points="1203.5,114.8 1189.8,121.9 1176,114.8 1189.8,107.8 				"/>
 			</g>
 			<g>
-				<polygon class="st2" points="1208.4,102.5 1189.6,112.2 1170.8,102.5 1189.6,92.9 				"/>
-				<polygon class="st8" points="1189.6,112.2 1208.4,102.5 1208.4,105.5 1189.6,115.2 				"/>
-				<polygon class="st9" points="1189.6,112.2 1170.8,102.5 1170.8,105.5 1189.6,115.2 				"/>
+				<polygon class="st1" points="1208.4,102.5 1189.6,112.2 1170.8,102.5 1189.6,92.9 				"/>
+				<polygon class="st7" points="1189.6,112.2 1208.4,102.5 1208.4,105.5 1189.6,115.2 				"/>
+				<polygon class="st8" points="1189.6,112.2 1170.8,102.5 1170.8,105.5 1189.6,115.2 				"/>
 			</g>
 		</g>
 	</g>
-	<path class="st22" d="M1208.4,114.8"/>
-	<circle class="st7" cx="881.8" cy="85.9" r="73.1"/>
-	<polygon class="st8" points="905.2,99.4 881.8,112.9 858.4,99.4 858.4,72.4 881.8,58.9 905.2,72.4 	"/>
-	<polygon class="st2" points="858.4,72.4 881.8,85.9 905.2,72.4 881.8,58.9 	"/>
-	<polygon class="st9" points="881.8,85.9 881.8,112.9 858.4,99.4 858.4,72.4 	"/>
-	<line class="st17" x1="881.8" y1="53.7" x2="881.8" y2="41.4"/>
-	<line class="st17" x1="895.8" y1="56.8" x2="901" y2="45.7"/>
-	<line class="st17" x1="867.8" y1="56.8" x2="862.6" y2="45.7"/>
-	<line class="st17" x1="881.8" y1="118.1" x2="881.8" y2="130.4"/>
-	<line class="st17" x1="895.8" y1="115" x2="901" y2="126.2"/>
-	<line class="st17" x1="867.8" y1="115" x2="862.6" y2="126.2"/>
-	<line class="st17" x1="914" y1="85.9" x2="926.3" y2="85.9"/>
-	<line class="st17" x1="910.9" y1="99.9" x2="922" y2="105.1"/>
-	<line class="st17" x1="910.9" y1="71.9" x2="922" y2="66.7"/>
-	<line class="st17" x1="849.6" y1="85.9" x2="837.3" y2="85.9"/>
-	<line class="st17" x1="852.7" y1="99.9" x2="841.5" y2="105.1"/>
-	<line class="st17" x1="852.7" y1="71.9" x2="841.5" y2="66.7"/>
+	<path class="st21" d="M1208.4,114.8"/>
+	<circle class="st6" cx="881.8" cy="85.9" r="73.1"/>
+	<polygon class="st7" points="905.2,99.4 881.8,112.9 858.4,99.4 858.4,72.4 881.8,58.9 905.2,72.4 	"/>
+	<polygon class="st1" points="858.4,72.4 881.8,85.9 905.2,72.4 881.8,58.9 	"/>
+	<polygon class="st8" points="881.8,85.9 881.8,112.9 858.4,99.4 858.4,72.4 	"/>
+	<line class="st16" x1="881.8" y1="53.7" x2="881.8" y2="41.4"/>
+	<line class="st16" x1="895.8" y1="56.8" x2="901" y2="45.7"/>
+	<line class="st16" x1="867.8" y1="56.8" x2="862.6" y2="45.7"/>
+	<line class="st16" x1="881.8" y1="118.1" x2="881.8" y2="130.4"/>
+	<line class="st16" x1="895.8" y1="115" x2="901" y2="126.2"/>
+	<line class="st16" x1="867.8" y1="115" x2="862.6" y2="126.2"/>
+	<line class="st16" x1="914" y1="85.9" x2="926.3" y2="85.9"/>
+	<line class="st16" x1="910.9" y1="99.9" x2="922" y2="105.1"/>
+	<line class="st16" x1="910.9" y1="71.9" x2="922" y2="66.7"/>
+	<line class="st16" x1="849.6" y1="85.9" x2="837.3" y2="85.9"/>
+	<line class="st16" x1="852.7" y1="99.9" x2="841.5" y2="105.1"/>
+	<line class="st16" x1="852.7" y1="71.9" x2="841.5" y2="66.7"/>
 </g>
 <g id="gray-smiler">
-	<circle class="st16" cx="686.3" cy="85.9" r="18.5"/>
-	<path class="st23" d="M674.6,91.9c2.2,4.3,6.6,7.2,11.7,7.2s9.5-2.9,11.7-7.2"/>
-	<circle class="st2" cx="698.7" cy="80.5" r="2.2"/>
-	<circle class="st2" cx="673.9" cy="80.5" r="2.2"/>
+	<circle class="st15" cx="686.3" cy="85.9" r="18.5"/>
+	<path class="st22" d="M674.6,91.9c2.2,4.3,6.6,7.2,11.7,7.2s9.5-2.9,11.7-7.2"/>
+	<circle class="st1" cx="698.7" cy="80.5" r="2.2"/>
+	<circle class="st1" cx="673.9" cy="80.5" r="2.2"/>
 </g>
 <g id="no-provider-illo">
-	<polygon class="st2" points="294.7,369.1 237.7,402 180.7,369.1 180.7,303.2 237.7,270.3 294.7,303.2 	"/>
+	<polygon class="st1" points="294.7,369.1 237.7,402 180.7,369.1 180.7,303.2 237.7,270.3 294.7,303.2 	"/>
 	<g>
 		<g>
-			<polyline class="st24" points="312.5,376.3 312.5,379.3 309.9,380.8 			"/>
-			<line class="st25" x1="300.5" y1="386.2" x2="245" y2="418.2"/>
-			<polyline class="st24" points="240.3,420.9 237.7,422.4 235.1,420.9 			"/>
-			<line class="st26" x1="225.7" y1="415.5" x2="170.3" y2="383.5"/>
-			<polyline class="st24" points="165.6,380.8 163,379.3 163,376.3 			"/>
-			<line class="st27" x1="163" y1="365.4" x2="163" y2="301.4"/>
-			<polyline class="st24" points="163,296 163,293 165.6,291.5 			"/>
-			<line class="st27" x1="175" y1="286.1" x2="230.4" y2="254.1"/>
-			<polyline class="st24" points="235.1,251.4 237.7,249.9 240.3,251.4 			"/>
-			<line class="st28" x1="249.7" y1="256.8" x2="305.2" y2="288.8"/>
-			<polyline class="st24" points="309.9,291.5 312.5,293 312.5,296 			"/>
-			<line class="st27" x1="312.5" y1="306.9" x2="312.5" y2="370.9"/>
+			<polyline class="st23" points="312.5,376.3 312.5,379.3 309.9,380.8 			"/>
+			<line class="st24" x1="300.5" y1="386.2" x2="245" y2="418.2"/>
+			<polyline class="st23" points="240.3,420.9 237.7,422.4 235.1,420.9 			"/>
+			<line class="st25" x1="225.7" y1="415.5" x2="170.3" y2="383.5"/>
+			<polyline class="st23" points="165.6,380.8 163,379.3 163,376.3 			"/>
+			<line class="st26" x1="163" y1="365.4" x2="163" y2="301.4"/>
+			<polyline class="st23" points="163,296 163,293 165.6,291.5 			"/>
+			<line class="st26" x1="175" y1="286.1" x2="230.4" y2="254.1"/>
+			<polyline class="st23" points="235.1,251.4 237.7,249.9 240.3,251.4 			"/>
+			<line class="st27" x1="249.7" y1="256.8" x2="305.2" y2="288.8"/>
+			<polyline class="st23" points="309.9,291.5 312.5,293 312.5,296 			"/>
+			<line class="st26" x1="312.5" y1="306.9" x2="312.5" y2="370.9"/>
 		</g>
 	</g>
-	<path class="st29" d="M238.2,359"/>
-	<path class="st29" d="M237.7,315.8"/>
-	<path class="st29" d="M216.8,337.4"/>
-	<path class="st29" d="M260,337.4"/>
-	<polygon class="st30" points="294.7,303.2 237.3,332.3 237.3,402 294.7,369.1 	"/>
-	<circle class="st31" cx="312.5" cy="379.3" r="12.7"/>
-	<circle class="st32" cx="162.9" cy="379.3" r="12.7"/>
-	<polygon class="st2" points="312.5,370.3 314.5,376.5 321,376.5 315.7,380.4 317.8,386.6 312.5,382.7 307.2,386.6 309.2,380.4 
+	<path class="st28" d="M238.2,359"/>
+	<path class="st28" d="M237.7,315.8"/>
+	<path class="st28" d="M216.8,337.4"/>
+	<path class="st28" d="M260,337.4"/>
+	<polygon class="st29" points="294.7,303.2 237.3,332.3 237.3,402 294.7,369.1 	"/>
+	<circle class="st30" cx="312.5" cy="379.3" r="12.7"/>
+	<circle class="st31" cx="162.9" cy="379.3" r="12.7"/>
+	<polygon class="st1" points="312.5,370.3 314.5,376.5 321,376.5 315.7,380.4 317.8,386.6 312.5,382.7 307.2,386.6 309.2,380.4 
 		303.9,376.5 310.4,376.5 	"/>
 </g>
 <g id="new-custom">
-	<polygon class="st33" points="263.461,42.357 244.999,53.016 226.539,42.357 226.539,21.042 244.999,10.384 263.461,21.042 	"/>
-	<polygon class="st2" points="257.131,38.703 244.999,45.706 232.869,38.703 232.869,24.697 244.999,17.694 257.131,24.697 	"/>
-	<polygon class="st33" points="251.404,35.397 245,39.095 238.596,35.397 238.596,28.002 245,24.305 251.404,28.002 	"/>
+	<polygon class="st32" points="263.461,42.357 244.999,53.016 226.539,42.357 226.539,21.042 244.999,10.384 263.461,21.042 	"/>
+	<polygon class="st1" points="257.131,38.703 244.999,45.706 232.869,38.703 232.869,24.697 244.999,17.694 257.131,24.697 	"/>
+	<polygon class="st32" points="251.404,35.397 245,39.095 238.596,35.397 238.596,28.002 245,24.305 251.404,28.002 	"/>
 </g>
 </svg>

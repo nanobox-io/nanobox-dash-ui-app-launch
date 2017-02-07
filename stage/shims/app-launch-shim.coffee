@@ -24,6 +24,7 @@ module.exports = class DataShim
       meta:
         icon: "custom"
         serverNickName: "Droplet"
+        dollarsPerMo : 5
         specs: [
           {metric:"ram", val: "512 MB"}
           {metric:"cpu", val: "0.5 Core"}
@@ -55,6 +56,7 @@ module.exports = class DataShim
       meta:
         icon: "aws"
         serverNickName: "EC2 Instance"
+        dollarsPerMo : 5
         specs: [
           {metric:"ram", val: "512 MB"}
           {metric:"cpu", val: "0.5 Core"}
@@ -100,6 +102,7 @@ module.exports = class DataShim
       meta:
         icon: "google-compute"
         serverNickName: "VM"
+        dollarsPerMo : 5
         specs: [
           {metric:"ram", val: "512 MB"}
           {metric:"cpu", val: "0.5 Core"}
@@ -149,6 +152,7 @@ module.exports = class DataShim
 #     "meta": {
 #       "icon": "digital-ocean",
 #       "serverNickName": "Droplet",
+dollarsPerMo : 5
 #       "credentialFields": [
 #         "access_token"
 #       ],

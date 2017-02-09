@@ -43,7 +43,7 @@ appCreateConfig =
   validateNameCb : fakeNameValidator
   # TODO : add the regex to the app launch name
 
-app.createAppLauncher appCreateConfig
+# app.createAppLauncher appCreateConfig
 
 
    ##   #####  #####     #####  #####   ####  #    # # #####  ###### #####
@@ -108,4 +108,4 @@ providerConfig =
   addProviderCb     : addProvider
   hasAccounts       : true
 
-# app.addProvider providerConfig
+app.addProvider providerConfig

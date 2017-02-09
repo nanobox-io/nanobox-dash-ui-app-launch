@@ -9,6 +9,7 @@ class HostMachine
     @appLauncher = new AppLauncher @$el, config
 
   addProvider : (config) ->
+    return if @providerMachine?
     @providerMachine = new ProviderMachine @$el, config
 
 window.nanobox ||= {}

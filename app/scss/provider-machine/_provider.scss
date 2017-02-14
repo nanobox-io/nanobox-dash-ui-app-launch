@@ -23,7 +23,7 @@
       .endpoint         {background: white; display: flex; flex-direction: column; padding:20px;
         .endpoint-row   {display: flex; align-items: center; margin-bottom:20px;
           .txt          {@include label; margin-right:10px; }
-          input         {background: #F0F3F5; height:35px; flex-grow:2; }
+          input         {flex-grow:2; }
         }
         $verified-color:#00AF5B;
         .arrow-button   {margin-left:auto;

@@ -4,7 +4,7 @@ authentication = require 'jade/provider-machine/authentication'
 module.exports = class Authentication extends Step
 
   constructor: (@$el, @nextStepCb, @getProvider, @getEndpoint, @verifyAccount) ->
-    @$node = $ "<div class='launch-step authentication' />"
+    @$node = $ "<div class='step authentication' />"
     @$el.append @$node
 
   activate : () ->

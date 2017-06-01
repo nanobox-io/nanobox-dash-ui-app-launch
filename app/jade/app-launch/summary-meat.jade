@@ -1,39 +1,32 @@
 div
   .info
     .info-box.provider
-      .title
-        .icon-wrapper(class="#{meta.icon}")
-          img.shadow-icon(data-src="#{meta.icon}" scalable="true")
-        .txt #{providerName}
-      .blurb 
-        .txt #{providerName} #{meta.serverNickName} - #{regionName}
-        #server-specs-toggle
-          img.shadow-icon(data-src="triangle-to-line")
-          .txt 
-        .specs
-          -var count = 0
-          each spec in meta.specs
-            
-            if count++ % 2 == 0
-              -var klass = "striped"
-            else
-              -var klass = ""
+      img.shadow-icon(data-src="lil-city")
+      .blurb
+        .icon-parent
+          .icon-wrapper(class="#{meta.icon}")
+            img.shadow-icon(data-src="#{meta.icon}" scalable="true")
+        .provider-details
+          .title Launch a #{providerName} #{meta.serverNickName} and install the nanobox platform
+          .txt Projected #{providerName} cost : <div class="cost">#{Math.round(meta.dollarsPerMo)}</div>
+          #server-specs-toggle
+            img.shadow-icon(data-src="triangle-to-line")
+            .txt 
+          .specs
+            -var count = 0
+            each spec in meta.specs
               
-            .spec(class="#{klass}")
-              .metric #{spec.metric}
-              .val #{spec.val}
-      .cost= Math.round(meta.dollarsPerMo)
+              if count++ % 2 == 0
+                -var klass = "striped"
+              else
+                -var klass = ""
+                
+              .spec(class="#{klass}")
+                .metric #{spec.metric}
+                .val #{spec.val}
         
-    .info-box.nanobox
-      .title
-        .icon-wrapper
-          img.shadow-icon(data-src="mini-nano-stack" scalable="true")
-        .txt Nanobox
-      .blurb Your app is free for 10 days, you will then need to choose a <a href="//nanobox.io/pricing">plan</a> that fits your needs.<br/><br/>Note, nanobox will remain free for opensource &amp; personal projects
-      .cost 0
-        
-    .arrow-button.no-arrow.lifecycle#submit
-      .txt Start 10 Day Trial
+    .arrow-button.lifecycle#submit
+      .txt Let's Go!
 
   .whats-next.cloaked
     .down-arrow

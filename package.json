@@ -7,7 +7,7 @@
     "jquery": "*",
     "velocity": "~1.1.0",
     "shadow-icons": "tolmark12/shadow-icons-js",
-    "sequin": "tolmark12/sequin^0.0.3",
+    "sequin": "tolmark12/sequin",
     "jade": "~1.6.0",
     "lexi": "nanobox-io/lexi"
   },

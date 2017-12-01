@@ -1,6 +1,6 @@
 {
   "name": "nanobox-app-launch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Temp App Launch process",
   "license": "MIT",
   "dependencies":{
@@ -9,7 +9,7 @@
     "shadow-icons": "tolmark12/shadow-icons-js",
     "sequin": "tolmark12/sequin",
     "jade": "~1.6.0",
-    "lexi": "nanobox-io/lexi"
+    "lexi-old": "nanobox-io/lexi"
   },
   "devDependencies": {
     "coffee-script": "^1.10.0",

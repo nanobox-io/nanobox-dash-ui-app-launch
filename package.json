@@ -1,11 +1,11 @@
 {
   "name": "nanobox-app-launch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Temp App Launch process",
   "license": "MIT",
   "dependencies":{
     "jquery": "*",
-    "velocity": "~1.1.0",
+    "velocity-animate": "~1.1.0",
     "shadow-icons": "tolmark12/shadow-icons-js",
     "sequin": "tolmark12/sequin",
     "jade": "~1.6.0",

@@ -1,6 +1,6 @@
 {
   "name": "nanobox-app-launch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Temp App Launch process",
   "license": "MIT",
   "dependencies":{

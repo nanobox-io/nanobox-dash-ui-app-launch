@@ -1,0 +1,17 @@
+$blu                      : #00ADFE;
+&.app-images    {margin-top: 103px;
+  .choices      {display:flex; align-items: center; justify-content: center;
+    .choice     {display:flex; align-items: center; padding:0 30px; width:307px; height:107px; background: white; color:$blu; border-radius: 3px; font-size:19px; font-weight: $semibold; font-style: italic; cursor:pointer; margin-right:75px;
+      .txt      {max-width:147px; margin-left:25px; }
+      &.active  {background: $blu; color:white;
+        svg *   {fill: white}
+      }
+      &.beta    {
+        &:after {content   : "beta"; @include caps($blu, 14px)}
+      }
+    }
+  }
+  .arrow-button{margin-left:20px; }
+  .step-error  {bottom:243%}
+
+}

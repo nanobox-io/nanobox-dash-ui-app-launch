@@ -2,8 +2,8 @@ stepManager    = require 'jade/step-manager'
 
 module.exports = class StepManager
 
-  constructor: (@$el, @cancelCb) ->
-    @$node = $ stepManager( {} )
+  constructor: (@$el, @cancelCb, totalSteps=4) ->
+    @$node = $ stepManager( {totalSteps:totalSteps} )
     @$el.append @$node
 
   build : () ->

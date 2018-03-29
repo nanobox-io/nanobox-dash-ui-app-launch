@@ -2,20 +2,22 @@ StepManager    = require 'step-manager'
 noProvider     = require 'jade/no-provider'
 NameApp        = require 'app-launch-steps/name-app'
 ChooseProvider = require 'app-launch-steps/choose-provider'
+AppImages      = require 'app-launch-steps/app-images'
 Summary        = require 'app-launch-steps/summary'
 
 module.exports = class AppLauncher
 
   constructor: ($el, @config) ->
-    @stepManager = new StepManager $el, @config.onCancel
+    @stepManager = new StepManager $el, @config.onCancel, 4
     @createSteps()
 
   createSteps : () ->
     $holder         = @stepManager.build()
     @nameApp        = new NameApp $holder, @stepManager.nextStep, @config.validateNameCb
     @chooseProvider = new ChooseProvider $holder, @stepManager.nextStep, @config.providers
+    @appImages      = new AppImages $holder, @stepManager.nextStep, @config.providers
     @summary        = new Summary $holder, @submitData, @getData
-    steps = [ @nameApp, @chooseProvider, @summary ]
+    steps = [ @nameApp, @chooseProvider, @appImages, @summary ]
     @stepManager.addSteps steps
 
   getData : () =>
@@ -34,8 +36,9 @@ module.exports = class AppLauncher
 
   submitData : () =>
     @summary.clearError()
-    data      = @chooseProvider.getProviderAndRegion()
-    data.name = @nameApp.getAppName()
+    data             = @chooseProvider.getProviderAndRegion()
+    data.name        = @nameApp.getAppName()
+    data.schema_type = @appImages.getImageMode() 
     @config.appLaunchCb data, @onSubmitComplete
 
   # Called after submitting

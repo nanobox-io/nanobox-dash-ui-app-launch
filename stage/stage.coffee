@@ -21,7 +21,7 @@ onLaunchApp = (data, cb)->
   console.log data
   setTimeout ()=>
     console.log "calling error"
-    cb {error:"That name was just taken, sorry. "}
+    cb {} #{error:"That name was just taken, sorry. "}
   ,
     1800 * Math.random()
   # example output :  {provider: 'aws', region:'us_east'}

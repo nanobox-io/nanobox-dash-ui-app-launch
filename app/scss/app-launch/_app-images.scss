@@ -1,17 +1,24 @@
 $blu                      : #00ADFE;
-&.app-images    {margin-top: 103px;
-  .choices      {display:flex; align-items: center; justify-content: center;
-    .choice     {display:flex; align-items: center; padding:0 30px; width:307px; height:107px; background: white; color:$blu; border-radius: 3px; font-size:19px; font-weight: $semibold; font-style: italic; cursor:pointer; margin-right:75px;
-      .txt      {max-width:147px; margin-left:25px; }
-      &.active  {background: $blu; color:white;
-        svg *   {fill: white}
+&.app-images      {margin-top: 103px;
+  .choices        {display:flex; align-items: center; justify-content: center;
+    .choice       {display:flex; align-items: center; padding:0 30px; width:307px; height:107px; background: white; color:$blu; border-radius: 3px; font-size:19px; font-weight: $semibold; font-style: italic; cursor:pointer; margin-right:75px; transition: all 130ms; position: relative;
+      .txt        {max-width:147px; margin-left:25px; }
+      .check      {left:-10px; bottom:-10px; position: absolute; width:33px; height:33px; background: $blu; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; box-shadow: 0px 1px 3px rgba(black, 0.2); opacity: 0;  }
+      &.active    {background: $blu; color:white;
+        .check    {opacity: initial; transition: all 200ms; }
+        svg *     {fill: white}
+        &.beta    {
+          &:after {color:$blu}
+        }
       }
-      &.beta    {
-        &:after {content   : "beta"; @include caps($blu, 14px)}
+      &.beta      {
+        &:after   {content: "(beta)"; position: absolute; right:0; bottom: -25px; @include caps($blu, 14px); font-style: normal; color:#B9BFC6; }
       }
+
+      &:hover     {margin-top:-0px; margin-bottom: 0px; box-shadow: 0 2px 2px rgba(#000, 0.2);}
     }
   }
-  .arrow-button{margin-left:20px; }
-  .step-error  {bottom:243%}
+  .arrow-button   {margin-left:20px; }
+  .step-error     {bottom:243%}
 
 }
